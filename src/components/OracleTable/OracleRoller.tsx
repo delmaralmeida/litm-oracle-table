@@ -28,6 +28,7 @@ export default function OracleRoller({ table }: Props) {
 
       <button onClick={handleRoll}>
         Roll d{table.dice}
+        {table.diceType === "double" && table.dice}
       </button>
 
       {result && (
