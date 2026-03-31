@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { rollByType } from "../../utils/rolls.ts";
+import { findMatchingRow } from "../../utils/helpers.ts";
 import type { OracleRoller as OracleRollerType, OracleRow } from "./OracleRoller.types.ts";
 
 type Result = {
@@ -16,7 +17,7 @@ export default function OracleRoller({ table }: Props) {
 
   const handleRoll = () => {
     const roll = rollByType(table.dice, table.diceType);
-    const row = table.rows.find((r) => r.roll === roll);
+    const row = findMatchingRow(table.rows, roll);
     const fallbackRow: OracleRow = { roll, text: "No result found" };
 
     setResult({ roll, row: row || fallbackRow });
@@ -27,7 +28,7 @@ export default function OracleRoller({ table }: Props) {
       <h2>{table.name}</h2>
 
       <button onClick={handleRoll}>
-        Roll d{table.dice}
+        Roll {table.diceType === "sum" && 2}d{table.dice}
         {table.diceType === "double" && table.dice}
       </button>
 

@@ -1,3 +1,5 @@
+import type { DiceType } from "../components/OracleTable/OracleRoller.types";
+
 /**
  * Rolls a standard die.
  * 
@@ -24,16 +26,37 @@ export function rollDoubleDigitDice(sides: DoubleDigitSides): number {
 }
 
 /**
+ * Rolls multiple dice and returns the sum.
+ * 
+ * @examples
+ * 2d6 => 1 + 3 = 4.
+ */
+export function rollSumDice(count: number, sides: number): number {
+  let total = 0;
+
+  for (let i = 0; i < count; i++) {
+    total += rollDice(sides);
+  }
+
+  return total;
+}
+
+/**
  * Roll by dice type.
  * 
- * @examples standard d6 vs double d66.
+ * @examples standard d6 vs double d66 vs sum 2d6.
  */
 export function rollByType(
   dice: number,
-  type: "standard" | "double"
+  type: DiceType,
 ): number {
   if (type === "double") {
     return rollDoubleDigitDice(dice as DoubleDigitSides);
   }
+
+  if (type === "sum") {
+    return rollSumDice(2, dice);
+  }
+
   return rollDice(dice);
 }

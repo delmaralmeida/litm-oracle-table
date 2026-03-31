@@ -1,7 +1,8 @@
-export type DiceType = "standard" | "double";
+export type DiceType = "standard" | "double" | "sum";
+export type MatchType = "exact" | "range";
 
 export type OracleRow = {
-  roll: number;
+  roll: number | string;
   [key: string]: string | number;
 };
 

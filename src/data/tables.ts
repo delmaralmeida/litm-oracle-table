@@ -2,6 +2,19 @@ import type { OracleRoller } from "../components/OracleTable/OracleRoller.types"
 
 export const tables: OracleRoller[] = [
   {
+    id: "mood",
+    name: "Mood",
+    dice: 6,
+    diceType: "sum",
+    displayColumns: ["mood"],
+    rows: [
+      { roll: "2-3", mood: "Despair" },
+      { roll: "4-6", mood: "Uneasy" },
+      { roll: "7-9", mood: "Neutral" },
+      { roll: "10-12", mood: "Hopeful" },
+    ]
+  },
+  {
     id: "theme",
     name: "Theme Oracle",
     dice: 6,
@@ -13,14 +26,14 @@ export const tables: OracleRoller[] = [
     ]
   },
   {
-    id: "event",
-    name: "Event Oracle",
+    id: "range",
+    name: "Range Oracle",
     dice: 6,
-    diceType: "standard",
+    diceType: "double",
     displayColumns: ["text"],
     rows: [
-      { roll: 1, text: "A sudden betrayal" },
-      { roll: 2, text: "A mysterious arrival" },
+      { roll: "11-33", text: "A sudden betrayal" },
+      { roll: "34-66", text: "A hidden truth" },
     ]
   },
   {
