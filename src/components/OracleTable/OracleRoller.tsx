@@ -1,24 +1,25 @@
 import { useState } from "react";
 import { rollByType } from "../../utils/rolls.ts";
 import { findMatchingRow } from "../../utils/helpers.ts";
-import type { OracleRoller as OracleRollerType, OracleRow } from "./OracleRoller.types.ts";
+import type { IOracleRoller as IOracleRollerType, IOracleRow } from "./OracleRoller.types.ts";
 
-type Result = {
+// update types to interfaces
+interface IResult {
   roll: number;
-  row: OracleRow;
+  row: IOracleRow;
 };
 
-type Props = {
-  table: OracleRollerType;
+interface IProps {
+  table: IOracleRollerType;
 };
 
-export default function OracleRoller({ table }: Props) {
-  const [result, setResult] = useState<Result | null>(null);
+export default function OracleRoller({ table }: IProps) {
+  const [result, setResult] = useState<IResult | null>(null);
 
   const handleRoll = () => {
     const roll = rollByType(table.dice, table.diceType);
     const row = findMatchingRow(table.rows, roll);
-    const fallbackRow: OracleRow = { roll, text: "No result found" };
+    const fallbackRow: IOracleRow = { roll, text: "No result found" };
 
     setResult({ roll, row: row || fallbackRow });
   };

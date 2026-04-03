@@ -1,16 +1,16 @@
-export type DiceType = "standard" | "double" | "sum";
-export type MatchType = "exact" | "range";
+export type TDiceType = "standard" | "double" | "sum";
+export type TMatchType = "exact" | "range";
 
-export type OracleRow = {
+export interface IOracleRow {
   roll: number | string;
   [key: string]: string | number;
 };
 
-export type OracleRoller = {
+export interface IOracleRoller {
   id: string;
   name: string;
   dice: number;
-  diceType: DiceType;
-  rows: OracleRow[];
+  diceType: TDiceType;
+  rows: IOracleRow[];
   displayColumns: string[];
 };

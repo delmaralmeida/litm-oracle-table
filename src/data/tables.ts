@@ -1,6 +1,6 @@
-import type { OracleRoller } from "../components/OracleTable/OracleRoller.types";
+import type { IOracleRoller } from "../components/OracleTable/OracleRoller.types";
 
-export const tables: OracleRoller[] = [
+export const tables: IOracleRoller[] = [
   {
     id: "mood",
     name: "Mood",

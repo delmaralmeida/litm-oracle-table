@@ -1,4 +1,4 @@
-import type { DiceType } from "../components/OracleTable/OracleRoller.types";
+import type { TDiceType } from "../components/OracleTable/OracleRoller.types";
 
 /**
  * Rolls a standard die.
@@ -48,7 +48,7 @@ export function rollSumDice(count: number, sides: number): number {
  */
 export function rollByType(
   dice: number,
-  type: DiceType,
+  type: TDiceType,
 ): number {
   if (type === "double") {
     return rollDoubleDigitDice(dice as DoubleDigitSides);

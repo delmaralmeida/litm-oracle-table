@@ -1,4 +1,4 @@
-import type { OracleRow } from "../components/OracleTable/OracleRoller.types";
+import type { IOracleRow } from "../components/OracleTable/OracleRoller.types";
 
 /** Parses a value like "1-3" into a range of numbers */
 function parseRange(value: string): [number, number] | null {
@@ -21,9 +21,9 @@ function parseRange(value: string): [number, number] | null {
  * 4, 66, "1-3", etc.
  */
 export function findMatchingRow(
-  rows: OracleRow[],
+  rows: IOracleRow[],
   roll: number,
-): OracleRow | undefined {
+): IOracleRow | undefined {
   return rows.find((row) => {
 
     if (typeof row.roll === "number") {
