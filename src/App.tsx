@@ -23,17 +23,7 @@ function App() {
           Legend in The Mist - Solo Oracle Tables
         </h1>
 
-        <div className="bg-slate-700 rounded-lg shadow-lg overflow-hidden">
-          <div className="p-6">
-            <OracleTable
-              table={tables[currentIndex]}
-              result={results[tables[currentIndex].id] || null}
-              onRoll={handleRoll}
-            />
-          </div>
-        </div>
-
-        <div className="mt-8 pt-8 border-t border-slate-600">
+        <div className="mb-8 pb-8 border-b border-slate-600">
           <h2 className="text-lg font-semibold text-amber-200 mb-4">Available Tables</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {tables.map((table, index) => (
@@ -49,6 +39,16 @@ function App() {
                 {table.name}
               </button>
             ))}
+          </div>
+        </div>
+
+        <div className="bg-slate-700 rounded-lg shadow-lg overflow-hidden">
+          <div className="p-6">
+            <OracleTable
+              table={tables[currentIndex]}
+              result={results[tables[currentIndex].id] || null}
+              onRoll={handleRoll}
+            />
           </div>
         </div>
       </div>
