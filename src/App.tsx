@@ -1,9 +1,20 @@
 import { useState } from "react";
 import { tables } from "./data/tables";
 import OracleTable from "./components/OracleTable/OracleRoller";
+import type { IOracleRow } from "./components/OracleTable/OracleRoller.types";
+
+interface IResult {
+  roll: number;
+  row: IOracleRow;
+}
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [results, setResults] = useState<Record<string, IResult | null>>({});
+
+  const handleRoll = (tableId: string, result: IResult) => {
+    setResults((prev) => ({ ...prev, [tableId]: result }));
+  };
 
   return (
     <div className="app min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-slate-100 p-4">
@@ -14,7 +25,11 @@ function App() {
 
         <div className="bg-slate-700 rounded-lg shadow-lg overflow-hidden">
           <div className="p-6">
-            <OracleTable table={tables[currentIndex]} />
+            <OracleTable
+              table={tables[currentIndex]}
+              result={results[tables[currentIndex].id] || null}
+              onRoll={handleRoll}
+            />
           </div>
         </div>
 

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { rollByType } from "../../utils/rolls.ts";
 import { findMatchingRow } from "../../utils/helpers.ts";
 import type { IOracleRoller as IOracleRollerType, IOracleRow } from "./OracleRoller.types.ts";
@@ -11,17 +10,18 @@ interface IResult {
 
 interface IProps {
   table: IOracleRollerType;
+  result: IResult | null;
+  onRoll: (tableId: string, result: IResult) => void;
 }
 
-export default function OracleRoller({ table }: IProps) {
-  const [result, setResult] = useState<IResult | null>(null);
+export default function OracleRoller({ table, result, onRoll }: IProps) {
 
   const handleRoll = () => {
     const roll = rollByType(table.dice, table.diceType);
     const row = findMatchingRow(table.rows, roll);
     const fallbackRow: IOracleRow = { roll, text: "No result found" };
 
-    setResult({ roll, row: row || fallbackRow });
+    onRoll(table.id, { roll, row: row || fallbackRow });
   };
 
   return (
