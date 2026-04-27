@@ -1,1 +1,75 @@
 @import "tailwindcss";
+
+@layer components {
+  .app {
+    @apply min-h-screen bg-linear-to-br from-slate-900 to-slate-800 text-slate-100 p-4;
+
+    .main-wrapper {
+      @apply max-w-2xl mx-auto;
+    }
+
+    .selection-card {
+      @apply mb-8 pb-8 border-b border-slate-600;
+
+      .table-selection {
+        @apply grid grid-cols-2 sm:grid-cols-3 gap-2;
+
+        button {
+          @apply p-3 rounded-lg text-sm font-medium transition-colors duration-200 bg-slate-600 text-slate-100 hover:bg-slate-500;
+
+          &.current-selected {
+            @apply bg-amber-500 text-slate-900;
+          }
+
+          &.not-selected {
+            @apply bg-slate-600 text-slate-100 hover:bg-slate-500;
+          }
+        }
+      }
+    }
+
+    .btn-testing {
+      @apply w-full bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-slate-900 font-bold py-3 px-4 rounded-lg transition-colors duration-200 mb-8;
+    }
+
+    .results-card {
+      @apply bg-slate-700 rounded-lg shadow-lg overflow-hidden;
+
+      h2 {
+        @apply text-2xl font-bold text-amber-200;
+      }
+
+      button {
+        @apply w-full bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200;
+      }
+
+      .results {
+        @apply bg-slate-600 p-4 rounded-lg space-y-3;
+
+        .single-result-section {
+          @apply border-b border-slate-500 pb-2 last:border-b-0;
+        }
+
+        h3 {
+          @apply text-lg font-semibold text-emerald-300;
+        }
+
+        h4 {
+          @apply text-amber-300 font-semibold text-sm;
+        }
+
+        p {
+          @apply text-slate-100 whitespace-pre-wrap;
+        }
+      }
+    }
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl font-bold text-center mb-8 text-amber-200;
+  }
+
+  h2 {
+    @apply text-lg font-semibold text-amber-200 mb-4;
+  }
+}
