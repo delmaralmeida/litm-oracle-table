@@ -1,4 +1,5 @@
-import type { IOracleRow } from "../components/OracleTable/OracleRoller.types";
+import { rollByType } from "./rolls";
+import type { ITable, ITableRow, IResult } from "../types/table/table.types";
 
 /** Parses a value like "1-3" into a range of numbers */
 function parseRange(value: string): [number, number] | null {
@@ -21,9 +22,9 @@ function parseRange(value: string): [number, number] | null {
  * 4, 66, "1-3", etc.
  */
 export function findMatchingRow(
-  rows: IOracleRow[],
+  rows: ITableRow[],
   roll: number,
-): IOracleRow | undefined {
+): ITableRow | undefined {
   return rows.find((row) => {
 
     if (typeof row.roll === "number") {
@@ -42,4 +43,15 @@ export function findMatchingRow(
 
     return false;
   });
+}
+
+export function rollTable(table: ITable): IResult {
+  const roll = rollByType(table.dice, table.diceType);
+  const row = findMatchingRow(table.rows, roll);
+  const fallbackRow: ITableRow = { roll, text: "No result found" };
+
+  return {
+    roll,
+    row: row || fallbackRow,
+  };
 }

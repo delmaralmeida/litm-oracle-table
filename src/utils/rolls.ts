@@ -1,4 +1,4 @@
-import type { TDiceType } from "../components/OracleTable/OracleRoller.types";
+import type { TDiceType, TDoubleDigitSides } from "../types/table/table.types";
 
 /**
  * Rolls a standard die.
@@ -6,7 +6,7 @@ import type { TDiceType } from "../components/OracleTable/OracleRoller.types";
  * @examples
  * d2, d3, d6, d12, d13, d20, d100, etc.
  */
-export function rollDice(sides: number): number {
+function rollDice(sides: number): number {
   return Math.floor(Math.random() * sides) + 1;
 }
 
@@ -16,9 +16,7 @@ export function rollDice(sides: number): number {
  * @examples
  * d22, d66, d99, etc.
  */
-type DoubleDigitSides = 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
-
-export function rollDoubleDigitDice(sides: DoubleDigitSides): number {
+function rollDoubleDigitDice(sides: TDoubleDigitSides): number {
   const tens = rollDice(sides);
   const ones = rollDice(sides);
 
@@ -31,7 +29,7 @@ export function rollDoubleDigitDice(sides: DoubleDigitSides): number {
  * @examples
  * 2d6 => 1 + 3 = 4.
  */
-export function rollSumDice(count: number, sides: number): number {
+function rollSumDice(count: number, sides: number): number {
   let total = 0;
 
   for (let i = 0; i < count; i++) {
@@ -51,7 +49,7 @@ export function rollByType(
   type: TDiceType,
 ): number {
   if (type === "double") {
-    return rollDoubleDigitDice(dice as DoubleDigitSides);
+    return rollDoubleDigitDice(dice as TDoubleDigitSides);
   }
 
   if (type === "sum") {

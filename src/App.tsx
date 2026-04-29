@@ -1,51 +1,61 @@
 import { useState } from "react";
 import { tables } from "./data/tables";
-import OracleTable from "./components/OracleTable/OracleRoller";
-import type { IOracleRow } from "./components/OracleTable/OracleRoller.types";
-
-interface IResult {
-  roll: number;
-  row: IOracleRow;
-}
+import { rollTable } from "./utils/helpers";
+import TableSelector from "./components/TableSelector/TableSelector";
+import ResultsDisplay from "./components/ResultsDisplay/ResultsDisplay";
+import RollSelectedButton from "./components/RollDiceButtons/RollSelectedButton";
+import RollAllTablesButton from "./components/RollDiceButtons/RollAllTablesButton";
+import type { IResult } from "./types/table/table.types";
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [results, setResults] = useState<Record<string, IResult | null>>({});
+  const currentTable = tables[currentIndex];
 
-  const handleRoll = (tableId: string, result: IResult) => {
-    setResults((prev) => ({ ...prev, [tableId]: result }));
+  // TODO: move logic to respective button
+  const handleRollSelected = () => {
+    const table = tables[currentIndex];
+
+    setResults(prev => ({
+      ...prev,
+      [table.id]: rollTable(table),
+    }));
+  };
+
+  // TODO: move logic to respective button
+  const handleRollAll = () => {
+    const newResults: Record<string, IResult> = {};
+
+    tables.forEach(table => {
+      newResults[table.id] = rollTable(table);
+    });
+
+    setResults(newResults);
   };
 
   return (
     <div className="app">
       <div className="main-wrapper">
-        <h1 className="title">
-          Legend in The Mist - Solo Oracle Tables
-        </h1>
+        <div id="table-selector">
+          <TableSelector
+            tables={tables}
+            currentIndex={currentIndex}
+            onSelect={setCurrentIndex}
+          />
+        </div>
 
-        <div className="selection-card">
-          <h2>Available Tables</h2>
-          <div className="table-selection">
-            {tables.map((table, index) => (
-              <button
-                key={table.id}
-                onClick={() => setCurrentIndex(index)}
-                className={index === currentIndex ? "current-selected" : ""}
-              >
-                {table.name}
-              </button>
-            ))}
+        <div id="buttons" className="pb-6">
+          <div className="grid grid-props">
+            <RollSelectedButton onClick={handleRollSelected} />
+            <RollAllTablesButton onClick={handleRollAll} />
           </div>
         </div>
 
-        <div className="results-card">
-          <div className="p-6">
-            <OracleTable
-              table={tables[currentIndex]}
-              result={results[tables[currentIndex].id] || null}
-              onRoll={handleRoll}
-            />
-          </div>
+        <div id="results">
+          <ResultsDisplay
+            table={currentTable}
+            result={results[currentTable.id]}
+          />
         </div>
       </div>
     </div>
