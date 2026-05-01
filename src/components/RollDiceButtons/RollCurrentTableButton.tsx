@@ -2,27 +2,24 @@ import type { ITable, IResults } from "../../types/table/table.types";
 import { rollTable } from "../../utils/helpers";
 
 interface IProps {
-  tables: ITable[];
+  currentTable: ITable;
   setResults: (results: IResults | ((prev: IResults) => IResults)) => void;
 }
 
-export default function RollAllTablesButton({
-  tables,
+export default function RollCurrentTableButton({
+  currentTable,
   setResults,
 }: IProps) {
   const onClick = () => {
-    const newResults: IResults = {};
-
-    tables.forEach(table => {
-      newResults[table.id] = rollTable(table);
-    });
-
-    setResults(newResults);
+    setResults(prev => ({
+      ...prev,
+      [currentTable.id]: rollTable(currentTable),
+    }));
   };
 
   return (
-    <button className="roll-all-tables" onClick={onClick}>
-      Roll All Tables
+    <button className="roll-current-table" onClick={onClick}>
+      Roll Current Table
     </button>
   );
 }

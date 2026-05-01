@@ -16,6 +16,10 @@ export interface ITableRow {
   [key: string]: string | number;
 };
 
+export interface IResults {
+  [tableId: string]: IResult | null;
+}
+
 export interface IResult {
   roll: number;
   row: ITableRow;

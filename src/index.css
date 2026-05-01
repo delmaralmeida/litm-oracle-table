@@ -44,7 +44,7 @@
       button {
         @apply w-full font-bold py-3 px-4 rounded-lg transition-colors duration-200;
 
-        &.roll-selected-table {
+        &.roll-current-table {
           @apply bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white;
         }
   
