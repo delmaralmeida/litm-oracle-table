@@ -12,37 +12,36 @@ function Home() {
   const currentTable = tables[currentIndex];
 
   return (
-    <div className="app">
-      <div className="main-wrapper">
-        <div id="table-selector">
-          <TableSelector
-            tables={tables}
-            currentIndex={currentIndex}
-            onSelect={setCurrentIndex}
+    <>
+      <h1>Table Roller</h1>
+      <div id="table-selector">
+        <TableSelector
+          tables={tables}
+          currentIndex={currentIndex}
+          onSelect={setCurrentIndex}
+        />
+      </div>
+
+      <div id="buttons" className="pb-6">
+        <div className="grid-props">
+          <RollCurrentTableButton
+            currentTable={currentTable}
+            setResults={setResults}
           />
-        </div>
-
-        <div id="buttons" className="pb-6">
-          <div className="grid grid-props">
-            <RollCurrentTableButton
-              currentTable={currentTable}
-              setResults={setResults}
-            />
-            <RollAllTablesButton
-              tables={tables}
-              setResults={setResults}
-            />
-          </div>
-        </div>
-
-        <div id="results">
-          <ResultsDisplay
-            table={currentTable}
-            result={results[currentTable.id]}
+          <RollAllTablesButton
+            tables={tables}
+            setResults={setResults}
           />
         </div>
       </div>
-    </div>
+
+      <div id="results">
+        <ResultsDisplay
+          table={currentTable}
+          result={results[currentTable.id]}
+        />
+      </div>
+    </>
   );
 }
 

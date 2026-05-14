@@ -1,32 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
+const getNavLinkClass = ({ isActive }: { isActive: boolean }) =>
+  `nav-link ${isActive ? "active" : ""}`;
 
 function Navbar() {
   return (
-    <nav className="border-b bg-white">
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <Link
-          to="/"
-          className="no-underline text-gray-900 font-semibold text-lg"
-        >
+    <nav id="navbar">
+      <div className="container">
+        <Link to="/" className="brand-name">
           Table Atlas
         </Link>
 
-        <div className="flex gap-6">
-          <Link
-            to="/"
-            className="no-underline text-gray-900 hover:text-blue-600 transition-colors"
-          >
+        <div className="navigation">
+          <NavLink to="/" end className={getNavLinkClass}>
             Home
-          </Link>
+          </NavLink>
 
-          <Link
-            to="/library"
-            className="no-underline text-gray-900 hover:text-blue-600 transition-colors"
-          >
+          <NavLink to="/library" className={getNavLinkClass}>
             Library
-          </Link>
+          </NavLink>
         </div>
-
       </div>
     </nav>
   );

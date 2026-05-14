@@ -6,11 +6,15 @@ import Navbar from "./components/Navbar/Navbar";
 function App() {
   return (
     <HashRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/library" element={<TableLibrary />} />
-      </Routes>
+      <div className="app">
+        <Navbar />
+        <main className="container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/library" element={<TableLibrary />} />
+          </Routes>
+        </main>
+      </div>
     </HashRouter>
   );
 }
