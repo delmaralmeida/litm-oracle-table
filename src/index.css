@@ -76,6 +76,73 @@
     }
   }
 
+  .clickable {
+    @apply
+      cursor-pointer
+      transition-all
+      duration-200
+      shadow-sm
+      hover:shadow-md
+      hover:-translate-y-0.5
+    ;
+  }
+
+  .card {
+    @apply
+      p-4
+      rounded
+      border
+      border-slate-200
+      bg-white
+    ;
+
+    .title {
+      @apply
+        text-lg
+        font-semibold
+        text-blue-600
+        mb-2
+      ;
+    }
+
+    .description {
+      @apply
+        text-slate-700
+        text-sm
+        mb-3
+      ;
+    }
+
+    .details {
+      @apply
+        text-slate-500
+        text-sm
+      ;
+    }
+  }
+
+  .grid-wrapper {
+    @apply grid gap-4;
+
+    &.max-5-columns {
+      @apply
+        grid-cols-1
+        sm:grid-cols-2
+        md:grid-cols-3
+        lg:grid-cols-4
+        xl:grid-cols-5
+      ;
+    }
+    &.max-4-columns {
+      @apply
+        sm:grid-cols-1
+        md:grid-cols-2
+        lg:grid-cols-3
+        xl:grid-cols-4
+      ;
+    }
+  }
+
   #navbar {
     @apply
       bg-white
@@ -86,10 +153,6 @@
 
     .container {
       @apply
-        max-w-6xl
-        mx-auto
-        px-6
-        py-4
         flex
         items-center
         justify-between
@@ -143,64 +206,42 @@
       border-slate-200
     ;
 
-    .grid-props {
+    button {
       @apply
-        grid
-        grid-cols-2
-        sm:grid-cols-3
-        lg:grid-cols-4
-        xl:grid-cols-5
-        gap-3
+        p-4
+        text-sm
+        font-medium
+        border
+        border-slate-200
+        bg-white
+        text-slate-700
+        shadow-sm
+        duration-200
+        hover:shadow-md
+        hover:border-blue-300
+        hover:-translate-y-0.5
       ;
 
-      button {
+      &.current-selected {
         @apply
-          p-4
-          text-sm
-          font-medium
-          border
-          border-slate-200
+          bg-blue-500
+          text-white
+          border-blue-500
+          shadow-md
+        ;
+      }
+
+      &.not-selected {
+        @apply
           bg-white
           text-slate-700
-          shadow-sm
-          duration-200
-          hover:shadow-md
-          hover:border-blue-300
-          hover:-translate-y-0.5
+          hover:bg-blue-50
         ;
-
-        &.current-selected {
-          @apply
-            bg-blue-500
-            text-white
-            border-blue-500
-            shadow-md
-          ;
-        }
-
-        &.not-selected {
-          @apply
-            bg-white
-            text-slate-700
-            hover:bg-blue-50
-          ;
-        }
       }
     }
   }
 
   #buttons {
-    .grid-props {
-      @apply
-        grid
-        grid-cols-2
-        sm:grid-cols-3
-        sm:flex
-        sm:justify-end
-        gap-3
-      ;
-    }
-
     button {
       @apply
         font-semibold

@@ -1,6 +1,7 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import TableLibrary from "./pages/Library";
+import Tables from "./pages/Tables";
+import Collections from "./pages/Collections";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
         <main className="container">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/library" element={<TableLibrary />} />
+            <Route path="/tables" element={<Tables />} />
+            <Route path="/collections" element={<Collections />} />
           </Routes>
         </main>
       </div>

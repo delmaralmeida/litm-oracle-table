@@ -23,7 +23,7 @@ function Home() {
       </div>
 
       <div id="buttons" className="pb-6">
-        <div className="grid-props">
+        <div className="grid-wrapper sm:flex sm:justify-end">
           <RollCurrentTableButton
             currentTable={currentTable}
             setResults={setResults}

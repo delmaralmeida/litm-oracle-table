@@ -15,7 +15,7 @@ export default function TableSelector({
     <>
       <h2>Available Tables</h2>
 
-      <div className="grid grid-props">
+      <div className="grid-wrapper max-5-columns">
         {tables.map((table, index) => (
           <button
             key={table.id}

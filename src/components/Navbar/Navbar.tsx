@@ -16,8 +16,12 @@ function Navbar() {
             Home
           </NavLink>
 
-          <NavLink to="/library" className={getNavLinkClass}>
-            Library
+          <NavLink to="/tables" className={getNavLinkClass}>
+            Tables
+          </NavLink>
+
+          <NavLink to="/collections" className={getNavLinkClass}>
+            Collections
           </NavLink>
         </div>
       </div>

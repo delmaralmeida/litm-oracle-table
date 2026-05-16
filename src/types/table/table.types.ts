@@ -5,6 +5,7 @@ export type TDoubleDigitSides = 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 export interface ITable {
   id: string;
   name: string;
+  description?: string;
   dice: number;
   diceType: TDiceType;
   rows: ITableRow[];
