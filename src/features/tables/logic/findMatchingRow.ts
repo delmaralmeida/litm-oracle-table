@@ -12,11 +12,27 @@ function parseRange(value: string): [number, number] | null {
   return [min, max];
 }
 
+/** Matches a string roll value (range or number) against a numeric roll */
+function matchStringRoll(rollString: string, roll: number): boolean {
+  const range = parseRange(rollString);
+  if (range) {
+    const [min, max] = range;
+    return roll >= min && roll <= max;
+  }
+
+  const numericValue = parseInt(rollString, 10);
+  if (!isNaN(numericValue) && String(numericValue) === rollString) {
+    return numericValue === roll;
+  }
+
+  return false;
+}
+
 /**
  * Matches roll result with existing column row rolls.
  * 
  * @examples
- * 4, 66, "1-3", etc.
+ * 4, 66, "5", "1-3", etc.
  */
 function findMatchingRow(
   rows: ITableRow[],
@@ -29,11 +45,7 @@ function findMatchingRow(
     }
 
     if (typeof row.roll === "string") {
-      const range = parseRange(row.roll);
-      if (!range) return false;
-
-      const [min, max] = range;
-      return roll >= min && roll <= max;
+      return matchStringRoll(row.roll, roll);
     }
 
     return false;
