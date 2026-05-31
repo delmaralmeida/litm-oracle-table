@@ -7,7 +7,6 @@ export interface ITable {
   dice: number;
   diceType: TDiceType;
   rows: ITableRow[];
-  displayColumns: string[];
 };
 
 export interface ITableRow {

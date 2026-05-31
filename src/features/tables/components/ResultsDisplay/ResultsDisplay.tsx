@@ -1,12 +1,13 @@
-import type { ITable, IResult } from "../../types";
+import type { IResult } from "../../types";
 
 interface IProps {
-  table: ITable;
   result: IResult | null;
 }
 
-function ResultsDisplay({ table, result }: IProps) {
+function ResultsDisplay({ result }: IProps) {
   if (!result) return null;
+
+  const cols = Object.keys(result.row).filter((k) => k !== "roll");
 
   return (
     <div className="result-display">
@@ -16,7 +17,7 @@ function ResultsDisplay({ table, result }: IProps) {
         <p>{result.row.text}</p>
       ) : (
         <div className="space-y-2">
-          {table.displayColumns.map((col) => (
+          {cols.map((col) => (
             <div key={col} className="single-result-section">
               <h4>{col}</h4>
               <p>{String(result.row[col])}</p>

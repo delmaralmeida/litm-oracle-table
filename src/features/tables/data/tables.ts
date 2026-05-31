@@ -8,7 +8,6 @@ import type { ITable } from "../types";
 //     dice: 6,
 //     diceType: "standard",
 //     rows: [],
-//     displayColumns: [],
 //   },
 //   {
 //     id: "weather",
@@ -17,7 +16,6 @@ import type { ITable } from "../types";
 //     dice: 6,
 //     diceType: "standard",
 //     rows: [],
-//     displayColumns: [],
 //   },
 //   {
 //     id: "events",
@@ -26,7 +24,6 @@ import type { ITable } from "../types";
 //     dice: 6,
 //     diceType: "sum",
 //     rows: [],
-//     displayColumns: [],
 //   },
 // ];
 
@@ -36,7 +33,6 @@ export const tables: ITable[] = [
     name: "Simple D6",
     dice: 6,
     diceType: "standard",
-    displayColumns: [],
     rows: [],
   },
   {
@@ -44,7 +40,6 @@ export const tables: ITable[] = [
     name: "Yes / No Oracle",
     dice: 6,
     diceType: "sum",
-    displayColumns: ["description"],
     rows: [
       { roll: 2, description: "Natural Failure" },
       { roll: "3-11", description: "6 or less: Consequences\n7-9: Success with Consequences\n10 or more: Success" },
@@ -56,7 +51,6 @@ export const tables: ITable[] = [
     name: "The Interpretive Question Oracle",
     dice: 6,
     diceType: "double",
-    displayColumns: ["symbol", "interpretation", "attitude", "being", "terrain", "item"],
     rows: [
       { roll: 11, symbol: "The Peasant", interpretation: "Hard work. Yearning for more. Cycles and repetition. An innocent bystander.", attitude: "Joyful", being: "Shapeshifting trickster", terrain: "Ridgeline", item: "Comb or hairpin" },
       { roll: 12, symbol: "The Merchant", interpretation: "Polite conflict. Bargains. Contracts and promises. A worldly person.", attitude: "Content", being: "Malicious or helpful household spirit", terrain: "Valley", item: "Locket" },
@@ -101,7 +95,6 @@ export const tables: ITable[] = [
     name: "The Conflict Oracle",
     dice: 6,
     diceType: "double",
-    displayColumns: ["central", "challenge", "target", "location", "unfolding", "secondary", "tags"],
     rows: [
       { roll: "11-13", central: "A monster...", challenge: "...physically endangers...\nAggressor or Pursuer, cause bodily harm or death - Ill Tidings, or negative physical statuses", target: "One or all of the Heroes", location: "At home, in a village, or in a small building\n(Homestead & Village)", unfolding: "Overt action or aggression", secondary: "A bystander or group\n(Charge)", tags: "No tag-worthy features" },
       { roll: "14-16", central: "A natural disaster or hazard...", challenge: "...socially or emotionally endangers...\nAggressor or Influence, ruin reputation or harm psyche - negative social or emotional statuses", target: "A Quest-related person or group", location: "A liminal or bucolic area, beyond towns\n(Outskirts & Fields)", unfolding: "Pleas or cries for help", secondary: "The Heroes’ vulnerable allies\n(Charge)", tags: "Notable landscape features\n(sharp rocks, dense woods, spooky marshes, tall barley stalks)" },
@@ -122,7 +115,6 @@ export const tables: ITable[] = [
     name: "The Premade Vignette Oracle",
     dice: 6,
     diceType: "double",
-    displayColumns: ["category", "vignette"],
     rows: [
       { roll: 11, category: "Chance Encounters", vignette: "Angry Locals" },
       { roll: 12, category: "Chance Encounters", vignette: "Cartographer" },
@@ -162,7 +154,6 @@ export const tables: ITable[] = [
     name: "The Premade Profile Oracle",
     dice: 6,
     diceType: "double",
-    displayColumns: ["category", "creatures", "people", "events"],
     rows: [
       { roll: "11-13", category: "Homestead & Village", creatures: "(1-3) House Hob\n(4-6) Imposing Pet", people: "(1) Avoided Acquaintance\n(2) Commoner\n(3) Crafty Rumormonger\n(4) Grumpy Keeper\n(5) Pastoral Priest or Priestess\n(6) Respected Elder or Stern Magistrate", events: "(1-3) Harvest Festival\n(4-6) Insular Hamlet" },
       { roll: "14-16", category: "Outskirts & Fields", creatures: "(1-2) Boggart\n(3-4) Moldering Jack\n(5) Ominous Raven\n(6) Runaway Farm Animal", people: "(1-3) Hedge Witch\n(4-6) Lone Tracker", events: "(1) Abandoned Well\n(2-3) An Honest Day's Work\n(4) Backwoods Haunting\n(5-6) Windswept Farmlands" },
@@ -183,7 +174,6 @@ export const tables: ITable[] = [
     name: "The Challenge Action Oracle",
     dice: 66,
     diceType: "standard",
-    displayColumns: ["category", "action", "description", "result"],
     rows: [
       { roll: 1, category: "Aggressor", action: "Attack", description: "Rush or clash with obvious violent intent", result: "Strike defensively (give a weak harmful status, and gain parry-1 or guarded-1)" },
       { roll: 2, category: "Aggressor", action: "Attack", description: "Rush or clash with obvious violent intent", result: "Strike with force (give a harmful status such as wounded)" },
@@ -258,7 +248,6 @@ export const tables: ITable[] = [
     name: "The Consequence Oracle",
     dice: 6,
     diceType: "double",
-    displayColumns: ["action", "consequences", "specifics"],
     rows: [
       { roll: "11-14", action: "A New Danger", consequences: "The Hero ran into a new Challenge or a new Threat from an existing Challenge.\n(New Challenge, Complication, optionally give the Hero surprised)", specifics: "1. Hero is surprised or unprepared\n2. Hero is startled or scared\n3. Hero is exposed or distracted\n4. Scratch ally tag(s)\n5. Scratch Hero tool or weapon\n6. Scratch Hero ability" },
       { roll: "15-22", action: "Collateral Damage", consequences: "The action unintentionally affects something or someone that the Hero did not want to affect.\n(Give an ally a negative status or scratch their tags, Ill Tidings)", specifics: "1. Ally is wounded\n2. Ally suffers Effects of action\n3. Scratch ally tool or weapon\n4. Scratch useful scene tag\n5. Create obstacle or hazard\n6. An innocent is hurt (Ill Tidings)" },
@@ -276,7 +265,6 @@ export const tables: ITable[] = [
     name: "The Revelations Oracle",
     dice: 6,
     diceType: "double",
-    displayColumns: ["act1", "act2", "act3"],
     rows: [
       { roll: "11-14", act1: "The Heroes’ home is facing a never before seen danger.", act2: "The greater world is dangerous.", act3: "The Great Danger has the power to reach their end goal and is making final preparations." },
       { roll: "15-22", act1: "The dangers are caused by a common source.", act2: "Some of the greater world’s dangers can also become allies, tools, lore, etc.", act3: "The Great Danger has certain attributes that make it invincible or unstoppable." },
