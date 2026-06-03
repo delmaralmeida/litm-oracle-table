@@ -34,10 +34,7 @@ function TablesRoller() {
       </div>
 
       <div id="results">
-        <ResultsDisplay
-          table={currentTable}
-          result={results[currentTable.id]}
-        />
+        <ResultsDisplay result={results[currentTable.id]} />
       </div>
     </>
   );
