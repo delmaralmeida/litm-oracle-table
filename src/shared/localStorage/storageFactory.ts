@@ -1,4 +1,4 @@
-export function storageFactory<T extends { id: string }>(key: string) {
+export function storageFactory<T extends { id: string }>(key: string, itemName = "Item") {
   const read = (): T[] => {
     try {
       const raw = localStorage.getItem(key);
@@ -27,7 +27,7 @@ export function storageFactory<T extends { id: string }>(key: string) {
       const items = read();
 
       if (items.some((existing) => existing.id === item.id)) {
-        throw new Error(`Item with id "${item.id}" already exists`);
+        throw new Error(`${itemName} with id "${item.id}" already exists`);
       }
 
       write([...items, item]);
@@ -38,7 +38,7 @@ export function storageFactory<T extends { id: string }>(key: string) {
       const index = items.findIndex((i) => i.id === item.id);
 
       if (index === -1) {
-        throw new Error(`Item with id "${item.id}" not found`);
+        throw new Error(`${itemName} with id "${item.id}" not found`);
       }
 
       items[index] = item;
@@ -53,4 +53,4 @@ export function storageFactory<T extends { id: string }>(key: string) {
       localStorage.removeItem(key);
     },
   };
-};
+}

@@ -1,4 +1,4 @@
-import { describe } from "vitest";
+import { describe, it, expect } from "vitest";
 import { storageFactory } from "./storageFactory";
 import { runCrudStorageTests } from "./runCrudStorageTests";
 import type { ICollection } from "@/features/collections/types";
@@ -21,5 +21,14 @@ describe("storageFactory", () => {
     storage,
     makeItem,
     storageKey: key,
+  });
+
+  it("uses custom itemName in error messages", () => {
+    const customStorage = storageFactory<TestItem>("custom-key", "CustomName");
+    const item = { id: "a", name: "Item A" };
+    customStorage.add(item);
+
+    expect(() => customStorage.add(item)).toThrow(/CustomName with id "a" already exists/);
+    expect(() => customStorage.update({ id: "b", name: "Item B" })).toThrow(/CustomName with id "b" not found/);
   });
 });
