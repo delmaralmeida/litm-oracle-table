@@ -11,7 +11,14 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
-const mockTable = (id: string) => ({ id, name: "T", diceType: "standard", dice: 6, rows: [] } as ITable);
+const mockTable = (id: string) => (
+  { id,
+    name: "T",
+    diceType: "basic",
+    dice: "d6",
+    rows: [],
+  } as ITable
+);
 const mockRollTableResult = (roll: number) => (
   vi.spyOn(rollingModule, "rollTableResult")
     .mockReturnValue({ roll, row: null } as unknown as IResult)
