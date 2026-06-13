@@ -1,9 +1,8 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import rollTableResult from "./rollTableResult";
-import * as rollingModule from "./rollByType";
 import * as tableModule from "@/features/tables";
-
+import * as rollingModule from "./rollByType";
+import rollTableResult from "./rollTableResult";
 import type { ITable, ITableRow } from "@/features/tables/types";
 
 const baseTable = {
@@ -45,8 +44,8 @@ describe("rollTableResult", () => {
   });
 
   it("confirms rollByType receives the correct configuration", () => {
-    const dice: number = 10;
-    const diceType: string = "double";
+    const dice: string = "d10";
+    const diceType: string = "digit";
 
     mockRollByType(5);
     mockFindMatchingRow(undefined);

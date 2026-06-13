@@ -8,11 +8,11 @@ function makeTable(overrides: Partial<ITable> = {}): ITable {
   return {
     id: "table-1",
     name: "Test Table",
-    dice: 6,
-    diceType: "standard",
+    dice: "d6",
+    diceType: "basic",
     rows: [],
     ...overrides,
-  };
+  } as ITable;
 }
 
 describe("tableStorage", () => {

@@ -1,76 +1,104 @@
 import { describe, expect, it, vi, beforeEach } from "vitest";
 import { rollByType } from "./rollByType";
-import type { TDiceType } from "../types";
 
 describe("rollByType", () => {
   beforeEach(() => {
     vi.restoreAllMocks();
   });
 
-  const mockSingleDice = (value: number) => {
-    vi.spyOn(Math, "random").mockReturnValue(value);
-  };
-
-  const mockDoubleDice = (tens: number, ones: number) => {
-    vi.spyOn(Math, "random")
-      .mockReturnValueOnce(tens)
-      .mockReturnValueOnce(ones);
-  };
-
-  const result = (number: number, type: TDiceType) => {
-    return rollByType(number, type);
-  };
-
-  describe("Standard dice", () => {
-    it("rolls min result", () => {
-      mockSingleDice(0.1);
-      expect(result(6, "standard")).toBe(1);
+  describe("Basic dice", () => {
+    it("rolls d6 without count prefix", () => {
+      vi.spyOn(Math, "random").mockReturnValue(0.5);
+      expect(rollByType("d6", "basic")).toBe(4);
     });
 
-    it("rolls max result", () => {
-      mockSingleDice(0.9);
-      expect(result(6, "standard")).toBe(6);
+    it("rolls d6 with min result", () => {
+      vi.spyOn(Math, "random").mockReturnValue(0.01);
+      expect(rollByType("1d6", "basic")).toBe(1);
     });
 
-    it("falls back to standard roll for unknown types", () => {
-      mockSingleDice(0.5);
-      expect(rollByType(6, "unknown" as TDiceType)).toBe(4);
-    });
-  });
-
-  describe("Double dice", () => {
-    it("rolls min result", () => {
-      mockDoubleDice(0.1, 0.1);
-      expect(result(6, "double")).toBe(11);
+    it("rolls d6 with max result", () => {
+      vi.spyOn(Math, "random").mockReturnValue(0.99);
+      expect(rollByType("1d6", "basic")).toBe(6);
     });
 
-    it("rolls max result", () => {
-      mockDoubleDice(0.9, 0.9);
-      expect(result(6, "double")).toBe(66);
+    it("rolls 3d20 with min result", () => {
+      vi.spyOn(Math, "random").mockReturnValue(0.01);
+      expect(rollByType("3d20", "basic")).toBe(3);
     });
 
-    it("confirms that tens and ones are independent digits", () => {  
-      mockDoubleDice(0.1, 0.9);
-      expect(rollByType(6, "double")).toBe(16);
-    });
-  });
-
-  describe("Summed dice", () => {
-    it("rolls min result", () => {
-      mockSingleDice(0.1);
-      expect(result(6, "sum")).toBe(2);
+    it("rolls 3d20 with max result", () => {
+      vi.spyOn(Math, "random").mockReturnValue(0.99);
+      expect(rollByType("3d20", "basic")).toBe(60);
     });
 
-    it("rolls max result", () => {
-      mockSingleDice(0.9);
-      expect(result(6, "sum")).toBe(12);
-    });
-
-    it("confirms that rolls are exactly 2 dice", () => {
+    it("rolls correct number of dice for 3d20", () => {
       const spy = vi.spyOn(Math, "random").mockReturnValue(0.5);
 
-      rollByType(6, "sum");
-      expect(spy).toHaveBeenCalledTimes(2);
+      rollByType("3d20", "basic");
+      expect(spy).toHaveBeenCalledTimes(3);
+    });
+  });
+
+  describe("Percentile dice", () => {
+    it("rolls min result of 1", () => {
+      vi.spyOn(Math, "random")
+        .mockReturnValueOnce(0.01)
+        .mockReturnValueOnce(0.11);
+      expect(rollByType("", "percentile")).toBe(1);
+    });
+
+    it("rolls 100 when result is 0", () => {
+      vi.spyOn(Math, "random")
+        .mockReturnValueOnce(0.01)
+        .mockReturnValueOnce(0.01);
+      expect(rollByType("", "percentile")).toBe(100);
+    });
+
+    it("rolls max result of 99", () => {
+      vi.spyOn(Math, "random")
+        .mockReturnValueOnce(0.99)
+        .mockReturnValueOnce(0.99);
+      expect(rollByType("", "percentile")).toBe(99);
+    });
+  });
+
+  describe("Digit dice", () => {
+    it("rolls d66 with min result", () => {
+      vi.spyOn(Math, "random").mockReturnValue(0.01);
+      expect(rollByType("d66", "digit")).toBe(11);
+    });
+
+    it("rolls d66 with max result", () => {
+      vi.spyOn(Math, "random").mockReturnValue(0.99);
+      expect(rollByType("d66", "digit")).toBe(66);
+    });
+
+    it("rolls d666 with min result", () => {
+      vi.spyOn(Math, "random").mockReturnValue(0.01);
+      expect(rollByType("d666", "digit")).toBe(111);
+    });
+
+    it("rolls d666 with max result", () => {
+      vi.spyOn(Math, "random").mockReturnValue(0.99);
+      expect(rollByType("d666", "digit")).toBe(666);
+    });
+
+    it("rolls d789 with min result", () => {
+      vi.spyOn(Math, "random").mockReturnValue(0.01);
+      expect(rollByType("d789", "digit")).toBe(111);
+    });
+
+    it("rolls d789 with max result", () => {
+      vi.spyOn(Math, "random").mockReturnValue(0.99);
+      expect(rollByType("d789", "digit")).toBe(789);
+    });
+
+    it("rolls correct number of dice for d666", () => {
+      const spy = vi.spyOn(Math, "random").mockReturnValue(0.5);
+
+      rollByType("d666", "digit");
+      expect(spy).toHaveBeenCalledTimes(3);
     });
   });
 });

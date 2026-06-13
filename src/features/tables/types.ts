@@ -1,14 +1,23 @@
 import type { TDiceType } from "@/features/rolling/types";
 
-export interface ITable {
+interface TableBase {
   id: string;
   name: string;
   description?: string;
-  dice: number;
-  diceType: TDiceType;
   rows: ITableRow[];
 };
 
+type PercentileTable = TableBase & {
+  diceType: "percentile";
+  dice?: never;
+};
+
+type NormalTable = TableBase & {
+  diceType: Exclude<TDiceType, "percentile">;
+  dice: string;
+};
+
+export type ITable = PercentileTable | NormalTable;
 export interface ITableRow {
   roll: number | string;
   [key: string]: string | number;
@@ -19,6 +28,6 @@ export interface IResults {
 }
 
 export interface IResult {
-  roll: number;
+  roll: number | null;
   row: ITableRow;
 }

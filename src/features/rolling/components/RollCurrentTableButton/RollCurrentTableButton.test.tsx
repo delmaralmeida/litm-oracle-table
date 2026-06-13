@@ -2,16 +2,15 @@ import { describe, expect, it, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import RollCurrentTableButton from "./RollCurrentTableButton";
 import * as rollingModule from "@/features/rolling";
-
+import RollCurrentTableButton from "./RollCurrentTableButton";
 import type { ITable, IResults } from "@/features/tables/types";
 
 const baseTable: ITable = {
   id: "encounters",
   name: "Encounters",
-  dice: 6,
-  diceType: "standard",
+  dice: "d6",
+  diceType: "basic",
   rows: [{ roll: 1, text: "Goblin" }],
 };
 
