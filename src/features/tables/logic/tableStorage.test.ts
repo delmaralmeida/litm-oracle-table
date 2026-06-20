@@ -1,19 +1,9 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import tableStorage from "./tableStorage";
-import collectionStorage from "@/features/collections/logic/collectionStorage";
-import { runCrudStorageTests } from "@/shared/localStorage/runCrudStorageTests";
-import type { ITable } from "../types";
 
-function makeTable(overrides: Partial<ITable> = {}): ITable {
-  return {
-    id: "table-1",
-    name: "Test Table",
-    dice: "d6",
-    diceType: "basic",
-    rows: [],
-    ...overrides,
-  } as ITable;
-}
+import { runCrudStorageTests } from "@/shared/localStorage/runCrudStorageTests";
+import collectionStorage from "@/features/collections/logic/collectionStorage";
+import tableStorage from "./tableStorage";
+import { makeTable } from "../fixtures";
 
 describe("tableStorage", () => {
   beforeEach(() => {
