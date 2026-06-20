@@ -1,0 +1,24 @@
+@reference "tailwindcss";
+
+@layer components {
+  .page-header {
+    @apply space-y-4;
+
+    h1 {
+      @apply mb-0;
+    }
+
+    .page-header-top {
+      @apply flex items-center justify-between;
+    }
+
+    .back-link {
+      @apply
+        text-blue-500 hover:text-blue-600
+        text-sm font-medium
+        no-underline
+        transition-colors duration-200
+      ;
+    }
+  }
+}
