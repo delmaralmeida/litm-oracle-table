@@ -1,0 +1,36 @@
+@reference "tailwindcss";
+
+@layer components {
+  .modal-overlay {
+    @apply
+      fixed inset-0 z-50
+      flex items-center justify-center
+      bg-slate-900/50
+      backdrop-blur-sm
+    ;
+  }
+
+  .modal {
+    @apply
+      bg-white
+      rounded-xl
+      shadow-2xl
+      p-6
+      w-full max-w-sm
+      mx-4
+      space-y-4
+    ;
+
+    .modal-title {
+      @apply text-lg font-bold text-slate-800 mb-0;
+    }
+
+    .modal-body {
+      @apply text-slate-600 text-sm;
+    }
+
+    .modal-actions {
+      @apply flex justify-end gap-3 pt-2;
+    }
+  }
+}

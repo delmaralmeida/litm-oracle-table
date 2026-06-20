@@ -1,0 +1,74 @@
+@reference "tailwindcss";
+
+@layer components {
+  .form-card {
+    @apply
+      bg-white
+      border border-slate-200
+      rounded-xl
+      shadow-sm
+      p-6
+    ;
+  }
+
+  .form {
+    @apply space-y-5;
+  }
+
+  .form-field {
+    @apply flex flex-col gap-1.5;
+  }
+
+  .form-label {
+    @apply text-sm font-semibold text-slate-600;
+  }
+
+  .form-required {
+    @apply text-red-500;
+  }
+
+  .form-input {
+    @apply
+      w-full
+      px-3 py-2
+      rounded
+      border border-slate-200
+      bg-white
+      text-slate-700
+      text-sm
+      transition-colors duration-200
+      focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-300
+    ;
+  }
+
+  .form-textarea {
+    @apply resize-y;
+  }
+
+  .form-row {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-4;
+  }
+
+  .form-section {
+    @apply space-y-4 pt-2 border-t border-slate-100;
+
+    h2 {
+      @apply mb-0;
+    }
+  }
+
+  .form-actions {
+    @apply flex justify-end gap-3 pt-4 border-t border-slate-100;
+  }
+
+  .form-error {
+    @apply
+      bg-red-50
+      border border-red-200
+      text-red-600
+      text-sm
+      rounded
+      px-3 py-2
+    ;
+  }
+}

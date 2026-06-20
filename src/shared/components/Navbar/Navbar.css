@@ -1,0 +1,58 @@
+@reference "tailwindcss";
+
+@layer components {
+  #navbar {
+    @apply
+      bg-white
+      border-b
+      border-slate-200
+      shadow-md
+    ;
+
+    .container {
+      @apply
+        flex
+        items-center
+        justify-between
+      ;
+    }
+
+    .brand-name {
+      @apply
+        text-2xl
+        font-bold
+        text-blue-500
+        hover:text-blue-600
+        no-underline
+      ;
+    }
+
+    .navigation {
+      @apply
+        flex
+        items-center
+        gap-6
+      ;
+
+      .nav-link {
+        @apply
+          text-blue-400
+          hover:text-blue-500
+          no-underline
+          transition-colors
+          duration-200
+          active:font-bold
+        ;
+
+        &.active {
+          @apply
+            font-bold
+            text-blue-500
+            hover:text-blue-600
+            underline
+          ;
+        }
+      }
+    }
+  }
+}
