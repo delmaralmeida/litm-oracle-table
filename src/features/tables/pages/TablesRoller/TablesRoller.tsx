@@ -1,8 +1,11 @@
 import { useState } from "react";
+
 import { tables } from "@/features/tables/data/tables";
 import { TableSelector, ResultsDisplay } from "@/features/tables";
 import { RollCurrentTableButton, RollAllTablesButton } from "@/features/rolling/";
+
 import type { IResult } from "@/features/tables/types";
+import "./TablesRoller.css";
 
 function TablesRoller() {
   const [currentIndex, setCurrentIndex] = useState(0);

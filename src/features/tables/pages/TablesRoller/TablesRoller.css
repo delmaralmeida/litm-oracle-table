@@ -1,0 +1,32 @@
+@reference "tailwindcss";
+
+@layer components {
+  #buttons {
+    button {
+      @apply
+        font-semibold
+        shadow-sm
+        hover:shadow-md
+        hover:-translate-y-0.5
+      ;
+
+      &.roll-current-table {
+        @apply
+          bg-blue-500
+          text-white
+          hover:bg-blue-600
+          active:bg-blue-700
+        ;
+      }
+
+      &.roll-all-tables {
+        @apply
+          bg-sky-400
+          text-white
+          hover:bg-sky-500
+          active:bg-sky-600
+        ;
+      }
+    }
+  }
+}

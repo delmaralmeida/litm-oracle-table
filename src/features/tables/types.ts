@@ -9,7 +9,7 @@ interface TableBase {
 
 type PercentileTable = TableBase & {
   diceType: "percentile";
-  dice?: never;
+  dice?: string;
 };
 
 type NormalTable = TableBase & {
@@ -21,6 +21,15 @@ export type ITable = PercentileTable | NormalTable;
 export interface ITableRow {
   roll: number | string;
   [key: string]: string | number;
+};
+
+export interface ITableForm {
+  name: string;
+  description: string;
+  diceType: TDiceType;
+  dice: string;
+  rows: ITableRow[];
+  [key: string]: unknown;
 };
 
 export interface IResults {
