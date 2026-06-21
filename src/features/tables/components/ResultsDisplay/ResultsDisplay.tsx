@@ -1,4 +1,5 @@
 import type { IResult } from "../../types";
+import "./ResultsDisplay.css";
 
 interface IProps {
   result: IResult | null;

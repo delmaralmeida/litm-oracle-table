@@ -83,10 +83,10 @@
       duration-200
       shadow-sm
       hover:shadow-md
-      hover:-translate-y-0.5
     ;
   }
 
+  /* ── Cards ── */
   .card {
     @apply
       p-4
@@ -143,158 +143,86 @@
     }
   }
 
-  #navbar {
+  /* ── Buttons ── */
+  .btn {
+    @apply
+      inline-flex items-center justify-center gap-2
+      px-4 py-2
+      rounded
+      font-semibold text-sm
+      cursor-pointer
+      transition-all duration-200
+      shadow-sm hover:shadow-md
+    ;
+  }
+
+  .btn-primary {
+    @apply bg-blue-500 text-white hover:bg-blue-600 active:bg-blue-700;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-blue-600 border border-blue-300 hover:bg-blue-50 active:bg-blue-100;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-slate-600 border border-slate-200 hover:bg-slate-100;
+  }
+
+  .btn-danger {
+    @apply bg-red-500 text-white hover:bg-red-600 active:bg-red-700;
+  }
+
+  .btn-icon {
+    @apply px-2 py-1 text-slate-400 border-0 shadow-none hover:text-red-500 hover:shadow-none;
+  }
+
+  /* ── Card Link ── */
+  a.card-link {
+    @apply no-underline block;
+  }
+
+  /* ── Show Page ── */
+  .show-card {
     @apply
       bg-white
-      border-b
-      border-slate-200
-      shadow-md
+      border border-slate-200
+      rounded-xl
+      shadow-sm
+      p-6
+      space-y-6
     ;
 
-    .container {
-      @apply
-        flex
-        items-center
-        justify-between
-      ;
+    .show-card-header {
+      @apply flex flex-col sm:flex-row gap-4 justify-between;
+
+      .show-card-meta {
+        @apply flex-1 space-y-2;
+      }
+
+      .show-card-actions {
+        @apply flex items-start gap-2;
+      }
     }
 
-    .brand-name {
-      @apply
-        text-2xl
-        font-bold
-        text-blue-500
-        hover:text-blue-600
-        no-underline
-      ;
+    .show-description {
+      @apply text-slate-600 leading-relaxed;
     }
 
-    .navigation {
-      @apply
-        flex
-        items-center
-        gap-6
-      ;
+    .show-detail {
+      @apply text-slate-500 text-sm;
+    }
 
-      .nav-link {
-        @apply
-          text-blue-400
-          hover:text-blue-500
-          no-underline
-          transition-colors
-          duration-200
-          active:font-bold
-        ;
+    .show-section {
+      @apply pt-4 border-t border-slate-100 space-y-4;
 
-        &.active {
-          @apply
-            font-bold
-            text-blue-500
-            hover:text-blue-600
-            underline
-          ;
-        }
+      h2 {
+        @apply mb-0;
       }
     }
   }
 
-  #table-selector {
-    @apply
-      mb-8
-      pb-8
-      border-b
-      border-slate-200
-    ;
-
-    button {
-      @apply
-        p-4
-        text-sm
-        font-medium
-        border
-        border-slate-200
-        bg-white
-        text-slate-700
-        shadow-sm
-        duration-200
-        hover:shadow-md
-        hover:border-blue-300
-        hover:-translate-y-0.5
-      ;
-
-      &.current-selected {
-        @apply
-          bg-blue-500
-          text-white
-          border-blue-500
-          shadow-md
-        ;
-      }
-
-      &.not-selected {
-        @apply
-          bg-white
-          text-slate-700
-          hover:bg-blue-50
-        ;
-      }
-    }
-  }
-
-  #buttons {
-    button {
-      @apply
-        font-semibold
-        shadow-sm
-        hover:shadow-md
-        hover:-translate-y-0.5
-      ;
-
-      &.roll-current-table {
-        @apply
-          bg-blue-500
-          text-white
-          hover:bg-blue-600
-          active:bg-blue-700
-        ;
-      }
-
-      &.roll-all-tables {
-        @apply
-          bg-sky-400
-          text-white
-          hover:bg-sky-500
-          active:bg-sky-600
-        ;
-      }
-    }
-  }
-
-  #results {
-    @apply
-      rounded-2xl
-      shadow-lg
-      overflow-hidden
-      border
-      bg-white
-      border-slate-200
-    ;
-
-    .result-display {
-      @apply
-        p-5
-        space-y-4
-        bg-slate-50
-      ;
-
-      .single-result-section {
-        @apply
-          pb-3
-          border-b
-          last:border-b-0
-          border-slate-200
-        ;
-      }
-    }
+  /* ── Empty state ── */
+  .empty-state {
+    @apply text-slate-400 italic py-12;
   }
 }

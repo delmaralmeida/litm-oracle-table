@@ -1,4 +1,5 @@
 import type { ITable } from "../../types";
+import "./TableSelector.css";
 
 interface IProps {
   tables: ITable[];
