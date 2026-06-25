@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 
 import { PageHeader, ConfirmDeleteModal } from "@/shared";
-// import { collectionStorage } from "@/features/collections";
+import { collectionStorage } from "@/features/collections";
 import { tableStorage } from "@/features/tables";
 import "./TableShow.css";
 
@@ -22,9 +22,9 @@ function TableShow() {
     );
   }
 
-  // const collections = collectionStorage.getAll().filter((c) =>
-  //   c.tableIds.includes(table.id)
-  // );
+  const collections = collectionStorage.getAll().filter((c) =>
+    c.tableIds.includes(table.id)
+  );
 
   const handleDelete = () => {
     tableStorage.remove(table.id);
@@ -79,7 +79,7 @@ function TableShow() {
           </div>
         </div>
 
-        {/* {collections.length > 0 && (
+        {collections.length > 0 && (
           <div className="show-section">
             <h2>In Collections</h2>
             <div className="tag-list">
@@ -90,7 +90,7 @@ function TableShow() {
               ))}
             </div>
           </div>
-        )} */}
+        )}
       </div>
 
       {showDeleteModal && (

@@ -214,10 +214,6 @@
 
     .show-section {
       @apply pt-4 border-t border-slate-100 space-y-4;
-
-      h2 {
-        @apply mb-0;
-      }
     }
   }
 
