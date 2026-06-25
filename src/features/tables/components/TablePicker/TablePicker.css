@@ -1,0 +1,60 @@
+@reference "tailwindcss";
+
+@layer components {
+  .table-picker-list {
+    @apply grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+  }
+
+  .table-picker-item {
+    @apply relative cursor-pointer;
+
+    input[type="checkbox"] {
+      @apply sr-only;
+    }
+
+    .table-picker-card {
+      @apply h-full transition-all duration-200 select-none;
+      @apply ring-2 ring-transparent;
+
+      &:hover {
+        @apply shadow-md;
+      }
+    }
+
+    input:checked + .table-picker-card {
+      @apply ring-blue-400 bg-blue-50;
+
+      .title {
+        @apply text-blue-700;
+      }
+    }
+
+    .table-picker-tooltip {
+      @apply
+        absolute z-50 bottom-[calc(100%+8px)] left-0 w-56
+        bg-slate-800 text-white text-xs rounded-lg shadow-xl p-3
+        pointer-events-none opacity-0 transition-opacity duration-150
+        flex flex-col gap-1;
+    }
+
+    &:hover .table-picker-tooltip {
+      @apply opacity-100;
+    }
+  }
+
+  .table-picker-tooltip-row {
+    @apply flex gap-2 items-baseline;
+
+    .table-picker-tooltip-roll {
+      @apply text-slate-400 shrink-0 w-8 text-right font-mono;
+    }
+
+    .table-picker-tooltip-value {
+      @apply truncate text-slate-100;
+    }
+  }
+
+  .table-picker-empty {
+    @apply text-slate-400 italic text-sm py-4;
+  }
+}

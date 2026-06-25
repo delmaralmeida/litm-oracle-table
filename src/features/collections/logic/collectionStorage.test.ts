@@ -1,16 +1,8 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import collectionStorage from "./collectionStorage";
-import type { ICollection } from "../types";
-import { runCrudStorageTests } from "@/shared/localStorage/runCrudStorageTests";
 
-function makeCollection(overrides: Partial<ICollection> = {}): ICollection {
-  return {
-    id: "col-1",
-    name: "Test Collection",
-    tableIds: ["t-1", "t-2"],
-    ...overrides,
-  };
-}
+import { runCrudStorageTests } from "@/shared/localStorage/runCrudStorageTests";
+import collectionStorage from "./collectionStorage";
+import { makeCollection } from "../fixtures";
 
 describe("collectionStorage", () => {
   beforeEach(() => {
