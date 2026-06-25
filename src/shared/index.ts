@@ -1,6 +1,4 @@
-import GridDisplay from "./components/GridDisplay/GridDisplay";
 import Navbar from "./components/Navbar/Navbar";
-
 import ListPage from "./components/ListPage/ListPage";
 import FormPage from "./components/FormPage/FormPage";
 import FormField from "./components/FormField/FormField";
@@ -11,7 +9,6 @@ import { renderWithRouter } from "./test/renderWithRouter";
 import type { FormFieldType, FormFieldConfig, FormPageProps } from "./components/FormPage/types";
 
 export {
-  GridDisplay,
   Navbar,
   ListPage,
   FormPage,
