@@ -1,5 +1,5 @@
 import { findMatchingRow } from "@/features/tables";
-import { rollByType } from "./rollByType";
+import rollByType from "./rollByType";
 import type { ITable, ITableRow, IResult } from "@/features/tables/types";
 
 function rollTableResult(table: ITable): IResult {

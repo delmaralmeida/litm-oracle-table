@@ -1,9 +1,13 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import * as tableModule from "@/features/tables";
-import * as rollingModule from "./rollByType";
+import rollByType from "./rollByType";
 import rollTableResult from "./rollTableResult";
 import type { ITable, ITableRow } from "@/features/tables/types";
+
+vi.mock("./rollByType", () => ({
+  default: vi.fn(),
+}));
 
 const baseTable = {
   id: "test-table",
@@ -11,7 +15,7 @@ const baseTable = {
 } as Partial<ITable>;
 
 const mockRollByType = (value: number) => {
-  vi.spyOn(rollingModule, "rollByType").mockReturnValue(value);
+  vi.mocked(rollByType).mockReturnValue(value);
 };
 
 const mockFindMatchingRow = (value: ITableRow | undefined) => {
@@ -22,7 +26,7 @@ const result = (value: ITable) => rollTableResult(value);
 
 describe("rollTableResult", () => {
   beforeEach(() => {
-    vi.restoreAllMocks();
+    vi.clearAllMocks();
   });
 
   it("returns correct row", () => {
@@ -53,7 +57,7 @@ describe("rollTableResult", () => {
     const table = { ...baseTable, dice: dice, diceType: diceType };
 
     result(table as ITable);
-    expect(rollingModule.rollByType).toHaveBeenCalledWith(dice, diceType);
+    expect(rollByType).toHaveBeenCalledWith(dice, diceType);
   });
 
   it("confirms findMatchingRow receives the correct configuration", () => {

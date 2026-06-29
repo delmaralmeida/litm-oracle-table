@@ -1,5 +1,5 @@
 import { describe, expect, it, vi, beforeEach } from "vitest";
-import { rollByType } from "./rollByType";
+import rollByType from "./rollByType";
 
 describe("rollByType", () => {
   beforeEach(() => {

@@ -1,4 +1,4 @@
-import type { TDiceType } from "../types";
+import type { TDiceType } from "@/features/tables";
 
 /** Roll a single die with N sides. */
 function rollDie(sides: number): number {
@@ -95,7 +95,7 @@ function parseDigitDice(notation: string): number[] {
  * 
  * @examples standard d6 vs double d66 vs sum 2d6.
  */
-export function rollByType(
+export default function rollByType(
   dice: string,
   type: TDiceType,
 ): number {

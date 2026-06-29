@@ -12,6 +12,7 @@ import TablePicker from "./components/TablePicker/TablePicker";
 import findMatchingRow from "./logic/findMatchingRow";
 import tableStorage from "./logic/tableStorage";
 import buildTable from "./logic/buildTable";
+import type { TDiceType } from "./types";
 
 export {
   Tables,
@@ -29,3 +30,5 @@ export {
   tableStorage,
   buildTable,
 };
+
+export type { TDiceType };

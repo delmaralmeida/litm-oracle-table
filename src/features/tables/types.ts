@@ -1,4 +1,4 @@
-import type { TDiceType } from "@/features/rolling/types";
+export type TDiceType = "basic" | "percentile" | "digit";
 
 interface TableBase {
   id: string;

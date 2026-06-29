@@ -1,5 +1,5 @@
 import type { FormFieldConfig } from "@/shared/components/FormPage/types";
-import type { TDiceType } from "@/features/rolling/types";
+import type { TDiceType } from "../../types";
 
 const DICE_TYPES: TDiceType[] = ["basic", "percentile", "digit"];
 
