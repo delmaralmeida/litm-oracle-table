@@ -1,5 +1,7 @@
-import { PageHeader, FormField } from "@/shared";
-import FieldInput from "./FieldInput";
+import PageHeader from "../PageHeader/PageHeader";
+// TODO: remove PageHeader component, this should be used inside parent componet.
+import FormField from "./FormField/FormField";
+import FieldInput from "./FieldInput/FieldInput";
 import type { FormPageProps } from "./types";
 
 export default function FormPage({

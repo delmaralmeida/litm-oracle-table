@@ -7,7 +7,7 @@ interface UseFormStateOptions<T extends Record<string, unknown>> {
 }
 
 /** Owns form field state, validation and submittion */
-export function useFormState<T extends Record<string, unknown>>({
+export default function useFormState<T extends Record<string, unknown>>({
   initialFields,
   onSubmit,
   validate,

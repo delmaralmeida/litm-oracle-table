@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { act, renderHook } from "@testing-library/react";
 
-import { useFormState } from "./useFormState";
+import useFormState from "./useFormState";
 import type { SyntheticEvent } from "react";
 
 const initialFields = { name: "Test", count: 1 };

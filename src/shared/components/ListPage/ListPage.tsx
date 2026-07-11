@@ -1,3 +1,4 @@
+// TODO: remove PageHeader component, this should be used inside parent componet.
 import PageHeader from "../PageHeader/PageHeader";
 import type { ReactNode } from "react";
 

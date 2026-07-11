@@ -1,4 +1,4 @@
-import type { FormFieldConfig } from "./types";
+import type { FormFieldConfig } from "../types";
 
 interface FieldInputProps {
   field: FormFieldConfig;
