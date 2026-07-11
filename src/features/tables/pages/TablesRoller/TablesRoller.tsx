@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { tables } from "@/features/tables/data/tables";
-import { TableSelector, ResultsDisplay } from "@/features/tables";
+import { TableSelector, ResultsDisplay } from "../../components";
 import { RollCurrentTableButton, RollAllTablesButton } from "@/features/rolling/";
 
 import type { IResult } from "@/features/tables/types";
