@@ -1,4 +1,4 @@
-import { FormPage, useFormState } from "@/shared";
+import { FormPage, useFormState } from "@/shared/components/FormPage";
 import { TABLE_FORM_FIELDS } from "./constants";
 import RowEditor from "./RowEditor/RowEditor";
 import type { ITableFormProps, ITableForm, ITableRow } from "./types";

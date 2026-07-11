@@ -1,8 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom";
 
-import { FormPage, useFormState, PageHeader } from "@/shared";
+import { FormPage, useFormState } from "@/shared/components/FormPage";
+import { PageHeader } from "@/shared";
 import { collectionStorage } from "@/features/collections";
-import type { FormFieldConfig } from "@/shared";
+import type { IFormFieldConfig } from "@/shared/components/FormPage";
 
 function CollectionEdit() {
   const { id } = useParams<{ id: string }>();
@@ -41,7 +42,7 @@ function CollectionEdit() {
     );
   }
 
-  const formFields: FormFieldConfig[] = [
+  const formFields: IFormFieldConfig[] = [
     {
       name: "name",
       label: "Name",

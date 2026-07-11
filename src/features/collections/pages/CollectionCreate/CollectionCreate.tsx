@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 
-import { FormPage, useFormState } from "@/shared";
+import { FormPage, useFormState } from "@/shared/components/FormPage";
 import { collectionStorage } from "@/features/collections";
 import { TablePicker } from "@/features/tables";
-import type { FormFieldConfig } from "@/shared";
+import type { IFormFieldConfig } from "@/shared/components/FormPage";
 
 function CollectionCreate() {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ function CollectionCreate() {
     },
   });
 
-  const formFields: FormFieldConfig[] = [
+  const formFields: IFormFieldConfig[] = [
     {
       name: "name",
       label: "Name",

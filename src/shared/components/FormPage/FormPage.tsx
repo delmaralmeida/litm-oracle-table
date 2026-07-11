@@ -2,7 +2,7 @@ import PageHeader from "../PageHeader/PageHeader";
 // TODO: remove PageHeader component, this should be used inside parent componet.
 import FormField from "./FormField/FormField";
 import FieldInput from "./FieldInput/FieldInput";
-import type { FormPageProps } from "./types";
+import type { IFormPageProps } from "./types";
 
 export default function FormPage({
   title,
@@ -16,7 +16,7 @@ export default function FormPage({
   backTo,
   backLabel,
   customSections,
-}: FormPageProps) {
+}: IFormPageProps) {
   return (
     <div className="space-y-8">
       <PageHeader title={title} backTo={backTo} backLabel={backLabel} />
