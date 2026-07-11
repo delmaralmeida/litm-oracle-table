@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { ListPage } from "@/shared";
+import { ListPage } from "@/shared/components";
 import { TableCard, tableStorage } from "@/features/tables";
 import type { ITable } from "@/features/tables/types";
 

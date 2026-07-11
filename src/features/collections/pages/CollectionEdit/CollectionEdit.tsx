@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 
 import { FormPage, useFormState } from "@/shared/components/FormPage";
-import { PageHeader } from "@/shared";
+import { PageHeader } from "@/shared/components";
 import { collectionStorage } from "@/features/collections";
 import type { IFormFieldConfig } from "@/shared/components/FormPage";
 

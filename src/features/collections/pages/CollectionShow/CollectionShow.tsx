@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 
-import { PageHeader, ConfirmDeleteModal } from "@/shared";
+import { PageHeader, ConfirmDeleteModal } from "@/shared/components";
 import { tableStorage } from "@/features/tables";
 import { collectionStorage } from "@/features/collections";
 

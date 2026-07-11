@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import "./ConfirmDeleteModal.css";
 
-interface ConfirmDeleteModalProps {
+interface IConfirmDeleteModalProps {
   name: string;
   onConfirm: () => void;
   onCancel: () => void;
 }
 
-function ConfirmDeleteModal({ name, onConfirm, onCancel }: ConfirmDeleteModalProps) {
+export default function ConfirmDeleteModal({ name, onConfirm, onCancel }: IConfirmDeleteModalProps) {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -37,5 +37,3 @@ function ConfirmDeleteModal({ name, onConfirm, onCancel }: ConfirmDeleteModalPro
     </div>
   );
 }
-
-export default ConfirmDeleteModal;
