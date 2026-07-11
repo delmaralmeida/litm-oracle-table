@@ -1,18 +1,19 @@
 import { describe, it, expect } from "vitest";
-import { storageFactory } from "./storageFactory";
-import { runCrudStorageTests } from "./runCrudStorageTests";
+
+import storageFactory from "./storageFactory";
+import runCrudStorageTests from "./runCrudStorageTests";
 import type { ICollection } from "@/features/collections/types";
 import type { ITable } from "@/features/tables/types";
 
-interface TestItem {
+interface ITestItem {
   id: string;
   name: string;
 }
 
 describe("storageFactory", () => {
   const key = "test-factory-key";
-  const storage = storageFactory<TestItem>(key);
-  const makeItem = (overrides?: Partial<ITable> | Partial<ICollection>): TestItem => ({
+  const storage = storageFactory<ITestItem>(key);
+  const makeItem = (overrides?: Partial<ITable> | Partial<ICollection>): ITestItem => ({
     id: overrides?.id ?? "item-1",
     name: "Test Item",
   });
@@ -24,7 +25,7 @@ describe("storageFactory", () => {
   });
 
   it("uses custom itemName in error messages", () => {
-    const customStorage = storageFactory<TestItem>("custom-key", "CustomName");
+    const customStorage = storageFactory<ITestItem>("custom-key", "CustomName");
     const item = { id: "a", name: "Item A" };
     customStorage.add(item);
 

@@ -1,8 +1,9 @@
 import { describe, it, expect, beforeEach } from "vitest";
+
 import type { ICollection } from "@/features/collections/types";
 import type { ITable } from "@/features/tables/types";
 
-interface CrudTestOptions<T extends { id: string }> {
+interface ICrudTestOptions<T extends { id: string }> {
   storage: {
     getAll(): T[];
     getById(id: string): T | undefined;
@@ -15,11 +16,11 @@ interface CrudTestOptions<T extends { id: string }> {
   storageKey: string;
 }
 
-export function runCrudStorageTests<T extends { id: string }>({
+export default function runCrudStorageTests<T extends { id: string }>({
   storage,
   makeItem,
   storageKey,
-}: CrudTestOptions<T>) {
+}: ICrudTestOptions<T>) {
   beforeEach(() => {
     localStorage.clear();
   });

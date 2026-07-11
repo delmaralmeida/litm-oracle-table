@@ -1,4 +1,4 @@
-export function storageFactory<T extends { id: string }>(key: string, itemName = "Item") {
+export default function storageFactory<T extends { id: string }>(key: string, itemName = "Item") {
   const read = (): T[] => {
     try {
       const raw = localStorage.getItem(key);
