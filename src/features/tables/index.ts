@@ -5,9 +5,7 @@ import TableEdit from "./pages/TableEdit/TableEdit";
 import TablesRoller from "./pages/TablesRoller/TablesRoller";
 import TableSelector from "./components/TableSelector/TableSelector";
 import ResultsDisplay from "./components/ResultsDisplay/ResultsDisplay";
-import RowEditor from "./components/RowEditor/RowEditor";
 import TableCard from "./components/TableCard/TableCard";
-import TableForm from "./components/TableForm/TableForm";
 import TablePicker from "./components/TablePicker/TablePicker";
 import findMatchingRow from "./logic/findMatchingRow";
 import tableStorage from "./logic/tableStorage";
@@ -22,9 +20,7 @@ export {
   TablesRoller,
   TableSelector,
   ResultsDisplay,
-  RowEditor,
   TableCard,
-  TableForm,
   TablePicker,
   findMatchingRow,
   tableStorage,

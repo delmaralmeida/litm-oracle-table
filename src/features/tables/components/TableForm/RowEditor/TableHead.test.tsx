@@ -3,24 +3,18 @@ import { cleanup, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import TableHead from "./TableHead";
+import type { IRenderTableHeadProps } from "../types";
 
 afterEach(() => {
   cleanup();
 });
-
-interface RenderTableHeadProps {
-  name?: string;
-  isRoll?: boolean;
-  onRename?: (value: string) => void;
-  onRemove?: () => void;
-}
 
 function renderTableHead({
   name = "result",
   isRoll = false,
   onRename = () => {},
   onRemove = () => {},
-}: RenderTableHeadProps = {}) {
+}: IRenderTableHeadProps = {}) {
   render(
     <TableHead name={name} isRoll={isRoll} onRename={onRename} onRemove={onRemove} />
   );

@@ -1,7 +1,9 @@
-import TableSelector from "../components/TableSelector/TableSelector";
-import ResultsDisplay from "../components/ResultsDisplay/ResultsDisplay";
+import TableSelector from "./TableSelector/TableSelector";
+import ResultsDisplay from "./ResultsDisplay/ResultsDisplay";
+import TableForm from "./TableForm/TableForm";
 
 export {
   TableSelector,
   ResultsDisplay,
+  TableForm,
 };

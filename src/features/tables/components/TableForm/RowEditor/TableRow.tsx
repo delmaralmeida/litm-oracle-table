@@ -1,25 +1,17 @@
-import type { ITableRow } from "@/features/tables/types";
-import { handleBlur, handleKeyDown } from "./rowEditorHelpers";
+import { handleBlur, handleKeyDown } from "../helpers";
+import type { ITableRowProps } from "../types";
 
-interface TableRowProps {
-  row: ITableRow;
-  columns: string[];
-  onUpdateCell: (col: string, value: string) => void;
-  onRemove: () => void;
-  isRemoveDisabled: boolean;
-}
-
-function TableRow({
+export default function TableRow({
   row,
   columns,
   onUpdateCell,
   onRemove,
   isRemoveDisabled,
-}: TableRowProps) {
+}: ITableRowProps) {
   return (
     <tr>
       {columns.map((col) => (
-        <td key={col} className="input-cell">
+        <td key={col}>
           <input
             type="text"
             className="table-input"
@@ -31,7 +23,7 @@ function TableRow({
           />
         </td>
       ))}
-      <td className="actions-cell">
+      <td>
         <button
           type="button"
           className="btn btn-ghost btn-icon"
@@ -45,5 +37,3 @@ function TableRow({
     </tr>
   );
 }
-
-export default TableRow;

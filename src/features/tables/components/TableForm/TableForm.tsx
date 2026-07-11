@@ -1,17 +1,8 @@
 import { FormPage, useFormState } from "@/shared";
-import { RowEditor } from "@/features/tables";
 import { TABLE_FORM_FIELDS } from "./constants";
-import type { ITableForm, ITableRow } from "@/features/tables/types";
-
-interface ITableFormProps {
-  initialFields: ITableForm;
-  title: string;
-  submitLabel: string;
-  backTo: string;
-  backLabel: string;
-  onCancel: () => void;
-  onSubmit: (fields: ITableForm) => void;
-};
+import RowEditor from "./RowEditor/RowEditor";
+import type { ITableFormProps, ITableForm, ITableRow } from "./types";
+import "./TableForm.css";
 
 function validateTableFields(fields: ITableForm): string | null {
   if (!fields.name.trim()) {

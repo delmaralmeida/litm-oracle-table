@@ -1,4 +1,4 @@
-import type { ITableRow } from "@/features/tables/types";
+import type { ITableRow } from "./types";
 
 export function addRow(
   rows: ITableRow[],

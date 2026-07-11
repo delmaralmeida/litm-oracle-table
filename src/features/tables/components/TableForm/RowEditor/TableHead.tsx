@@ -1,19 +1,13 @@
 import { useState, useEffect } from "react";
-import { handleKeyDown } from "./rowEditorHelpers";
+import { handleKeyDown } from "../helpers";
+import type { ITableHeadProps } from "../types";
 
-interface TableHeadProps {
-  name: string;
-  onRename: (newName: string) => void;
-  onRemove: () => void;
-  isRoll: boolean;
-}
-
-function TableHead({
+export default function TableHead({
   name,
   onRename,
   onRemove,
   isRoll
-}: TableHeadProps) {
+}: ITableHeadProps) {
   const [value, setValue] = useState(name);
 
   useEffect(() => {
@@ -34,7 +28,7 @@ function TableHead({
   }
 
   return (
-    <th className="group">
+    <th>
       <div className="header-cell-content">
         <input
           type="text"
@@ -56,5 +50,3 @@ function TableHead({
     </th>
   );
 }
-
-export default TableHead;

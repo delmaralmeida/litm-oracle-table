@@ -1,21 +1,13 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
-
 import userEvent from "@testing-library/user-event";
+
 import TableRow from "./TableRow";
-import type { ITableRow } from "@/features/tables/types";
+import type { IRenderTableRowProps, ITableRow } from "../types";
 
 afterEach(() => {
   cleanup();
 });
-
-interface renderTableRowProps {
-  row?: ITableRow;
-  columns?: string[];
-  onUpdateCell?: (col: string, value: string) => void;
-  onRemove?: () => void;
-  isRemoveDisabled?: boolean;
-}
 
 function renderTableRow({
   row = { roll: 1 },
@@ -23,7 +15,7 @@ function renderTableRow({
   onUpdateCell = () => {},
   onRemove = () => {},
   isRemoveDisabled = false,
-}: renderTableRowProps = {}) {
+}: IRenderTableRowProps = {}) {
   render(
     <TableRow
       row={row}

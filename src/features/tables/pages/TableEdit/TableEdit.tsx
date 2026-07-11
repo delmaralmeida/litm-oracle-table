@@ -1,8 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom";
 
 import { PageHeader } from "@/shared";
-import { TableForm, tableStorage, buildTable } from "@/features/tables";
-import type { ITableForm } from "@/features/tables/types";
+import { tableStorage, buildTable } from "@/features/tables";
+import { TableForm } from "../../components";
+import type { ITableForm } from "../../types";
 
 function TableEdit() {
   const { id } = useParams<{ id: string }>();

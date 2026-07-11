@@ -7,19 +7,13 @@ import {
   addColumn,
   renameColumn,
   removeColumn,
-} from "./rowEditorHelpers";
-import type { ITableRow } from "@/features/tables/types";
-import "./RowEditor.css";
+} from "../helpers";
+import type { IRowEditorProps } from "../types";
 
-interface RowEditorProps {
-  rows: ITableRow[];
-  onChange: (rows: ITableRow[]) => void;
-}
-
-function RowEditor({
+export default function RowEditor({
   rows,
   onChange,
-}: RowEditorProps) {
+}: IRowEditorProps) {
   const columns = Array.from(
     new Set(["roll", ...rows.flatMap((r) => Object.keys(r))])
   );
@@ -54,7 +48,7 @@ function RowEditor({
                   key={col}
                   name={col}
                   isRoll={col === "roll"}
-                  onRename={(newName) => onChange(renameColumn(rows, columns, col, newName))}
+                  onRename={(newName: string) => onChange(renameColumn(rows, columns, col, newName))}
                   onRemove={() => onChange(removeColumn(rows, col))}
                 />
               ))}
@@ -67,7 +61,7 @@ function RowEditor({
                 key={index}
                 row={row}
                 columns={columns}
-                onUpdateCell={(col, value) => onChange(updateRow(rows, index, col, value))}
+                onUpdateCell={(col: string, value: string) => onChange(updateRow(rows, index, col, value))}
                 onRemove={() => onChange(removeRow(rows, index))}
                 isRemoveDisabled={rows.length <= 1}
               />
@@ -78,5 +72,3 @@ function RowEditor({
     </div>
   );
 }
-
-export default RowEditor;

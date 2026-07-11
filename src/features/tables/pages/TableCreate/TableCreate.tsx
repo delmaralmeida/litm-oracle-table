@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 
-import { TableForm, tableStorage, buildTable } from "@/features/tables";
-import type { ITableForm } from "@/features/tables/types";
+import { tableStorage, buildTable } from "@/features/tables";
+import { TableForm } from "../../components";
+import type { ITableForm } from "../../types";
 
 function TableCreate() {
   const navigate = useNavigate();
