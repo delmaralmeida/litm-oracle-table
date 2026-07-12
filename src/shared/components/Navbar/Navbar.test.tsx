@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it } from "vitest";
 import { cleanup, screen } from "@testing-library/react";
 
-import { renderWithRouter } from "@/shared";
+import { renderWithRouter } from "@/shared/testing";
 import Navbar from "./Navbar";
 
 afterEach(() => {

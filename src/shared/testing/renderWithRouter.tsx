@@ -2,20 +2,20 @@ import { render } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import type { ReactElement } from "react";
 
-interface RouteConfig {
+interface IRouteConfig {
   path: string;
   element: ReactElement;
 }
 
-interface RenderWithRouterOptions {
+interface IRenderWithRouterOptions {
   initialEntries?: string[];
-  routes: RouteConfig[];
+  routes: IRouteConfig[];
 }
 
-export function renderWithRouter({
+export default function renderWithRouter({
   initialEntries = ["/"],
   routes,
-}: RenderWithRouterOptions) {
+}: IRenderWithRouterOptions) {
   return render(
     <MemoryRouter initialEntries={initialEntries}>
       <Routes>

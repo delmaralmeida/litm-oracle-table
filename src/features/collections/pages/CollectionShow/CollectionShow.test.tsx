@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { cleanup, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import { renderWithRouter } from "@/shared/test/renderWithRouter";
+import { renderWithRouter } from "@/shared/testing";
 import { collectionStorage } from "@/features/collections";
 import { tableStorage } from "@/features/tables";
 import { makeTable } from "@/features/tables/fixtures";

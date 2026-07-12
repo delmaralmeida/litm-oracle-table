@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { cleanup, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import { renderWithRouter } from "../../test/renderWithRouter";
+import { renderWithRouter } from "../../testing";
 import FormPage from "./FormPage";
 import type { IFormFieldConfig } from "./types";
 
