@@ -1,4 +1,3 @@
-import CollectionCard from "./components/CollectionCard/CollectionCard";
 import Collections from "./pages/Collections/Collections";
 import CollectionEdit from "./pages/CollectionEdit/CollectionEdit";
 import CollectionShow from "./pages/CollectionShow/CollectionShow";
@@ -7,7 +6,6 @@ import collectionStorage from "./logic/collectionStorage";
 import type { ICollection } from "./types";
 
 export {
-  CollectionCard,
   Collections,
   CollectionShow,
   CollectionCreate,
