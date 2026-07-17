@@ -1,6 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "@/features/tables/pages/TablesRoller/TablesRoller";
-import { Tables, TableShow, TableCreate, TableEdit } from "@/features/tables";
+import {
+  TablesRoller as Home,
+  Tables,
+  TableShow,
+  TableCreate,
+  TableEdit
+} from "@/features/tables/pages";
 import {
   Collections,
   CollectionCreate,

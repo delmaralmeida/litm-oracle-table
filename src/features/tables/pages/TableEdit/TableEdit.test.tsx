@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 
 import { renderWithRouter } from "@/shared/testing";
 import { tableStorage } from "../../logic";
-import { makeTable } from "@/features/tables/fixtures";
+import { makeTable } from "../../fixtures";
 import TableEdit from "./TableEdit";
 
 afterEach(() => {

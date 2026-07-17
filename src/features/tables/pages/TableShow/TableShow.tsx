@@ -6,7 +6,7 @@ import { collectionStorage } from "@/features/collections/logic";
 import { tableStorage } from "../../logic";
 import "./TableShow.css";
 
-function TableShow() {
+export default function TableShow() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -103,5 +103,3 @@ function TableShow() {
     </div>
   );
 }
-
-export default TableShow;

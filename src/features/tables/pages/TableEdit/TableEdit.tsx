@@ -5,7 +5,7 @@ import { tableStorage, buildTable } from "../../logic";
 import { TableForm } from "../../components";
 import type { ITableForm } from "../../types";
 
-function TableEdit() {
+export default function TableEdit() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const table = id ? tableStorage.getById(id) : undefined;
@@ -45,5 +45,3 @@ function TableEdit() {
     />
   );
 }
-
-export default TableEdit;
