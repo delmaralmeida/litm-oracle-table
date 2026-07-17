@@ -5,7 +5,7 @@ import { PageHeader } from "@/shared/components";
 import { collectionStorage } from "../../logic";
 import type { IFormFieldConfig } from "@/shared/components/FormPage";
 
-function CollectionEdit() {
+export default function CollectionEdit() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const collection = id ? collectionStorage.getById(id) : undefined;
@@ -76,5 +76,3 @@ function CollectionEdit() {
     />
   );
 }
-
-export default CollectionEdit;

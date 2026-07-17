@@ -5,8 +5,8 @@ import userEvent from "@testing-library/user-event";
 import { renderWithRouter } from "@/shared/testing";
 import { tableStorage } from "@/features/tables";
 import { makeTable } from "@/features/tables/fixtures";
-import CollectionCreate from "./CollectionCreate";
 import { collectionStorage } from "../../logic";
+import CollectionCreate from "./CollectionCreate";
 
 const newCollectionId = "00000000-0000-0000-0000-000000000001";
 

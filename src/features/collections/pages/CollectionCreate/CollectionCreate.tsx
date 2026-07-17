@@ -5,7 +5,7 @@ import { TablePicker } from "@/features/tables";
 import { collectionStorage } from "../../logic";
 import type { IFormFieldConfig } from "@/shared/components/FormPage";
 
-function CollectionCreate() {
+export default function CollectionCreate() {
   const navigate = useNavigate();
 
   const { fields, error, handleFieldChange, handleSubmit } = useFormState({
@@ -77,5 +77,3 @@ function CollectionCreate() {
     />
   );
 }
-
-export default CollectionCreate;

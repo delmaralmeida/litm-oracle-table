@@ -5,9 +5,9 @@ import userEvent from "@testing-library/user-event";
 import { renderWithRouter } from "@/shared/testing";
 import { tableStorage } from "@/features/tables";
 import { makeTable } from "@/features/tables/fixtures";
-import CollectionShow from "./CollectionShow";
 import { collectionStorage } from "../../logic";
 import makeCollection from "../../fixtures";
+import CollectionShow from "./CollectionShow";
 
 afterEach(() => {
   cleanup();

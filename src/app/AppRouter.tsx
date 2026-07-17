@@ -1,7 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "@/features/tables/pages/TablesRoller/TablesRoller";
 import { Tables, TableShow, TableCreate, TableEdit } from "@/features/tables";
-import { Collections, CollectionCreate, CollectionShow, CollectionEdit } from "@/features/collections";
+import {
+  Collections,
+  CollectionCreate,
+  CollectionShow,
+  CollectionEdit,
+} from "@/features/collections/pages";
 
 function AppRouter() {
   return (
