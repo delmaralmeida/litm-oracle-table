@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 
 import { PageHeader, ConfirmDeleteModal } from "@/shared/components";
-import { collectionStorage } from "@/features/collections";
+import { collectionStorage } from "@/features/collections/logic";
 import { tableStorage } from "@/features/tables";
 import "./TableShow.css";
 

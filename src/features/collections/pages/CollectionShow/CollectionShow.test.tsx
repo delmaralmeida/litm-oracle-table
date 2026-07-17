@@ -3,11 +3,11 @@ import { cleanup, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { renderWithRouter } from "@/shared/testing";
-import { collectionStorage } from "@/features/collections";
 import { tableStorage } from "@/features/tables";
 import { makeTable } from "@/features/tables/fixtures";
 import { makeCollection } from "@/features/collections/fixtures";
 import CollectionShow from "./CollectionShow";
+import { collectionStorage } from "../../logic";
 
 afterEach(() => {
   cleanup();

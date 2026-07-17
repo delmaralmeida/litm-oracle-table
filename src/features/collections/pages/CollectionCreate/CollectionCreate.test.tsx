@@ -3,10 +3,10 @@ import { cleanup, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { renderWithRouter } from "@/shared/testing";
-import { collectionStorage } from "@/features/collections";
 import { tableStorage } from "@/features/tables";
 import { makeTable } from "@/features/tables/fixtures";
 import CollectionCreate from "./CollectionCreate";
+import { collectionStorage } from "../../logic";
 
 const newCollectionId = "00000000-0000-0000-0000-000000000001";
 

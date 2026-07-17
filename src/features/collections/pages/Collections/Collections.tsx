@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 import { ListPage } from "@/shared/components";
-import { collectionStorage } from "@/features/collections";
 import { CollectionCard } from "../../components";
+import { collectionStorage } from "../../logic";
 import type { ICollection } from "@/features/collections";
 
 function Collections() {

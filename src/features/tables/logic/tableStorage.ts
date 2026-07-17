@@ -1,5 +1,5 @@
 import { storageFactory } from "@/shared/localStorage";
-import collectionStorage from "@/features/collections/logic/collectionStorage";
+import { collectionStorage } from "@/features/collections/logic";
 import type { ICollection } from "@/features/collections/types";
 import type { ITable } from "../types";
 

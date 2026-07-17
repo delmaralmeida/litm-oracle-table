@@ -3,9 +3,9 @@ import { cleanup, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { renderWithRouter } from "@/shared/testing";
-import { collectionStorage } from "@/features/collections";
 import { makeCollection } from "@/features/collections/fixtures";
 import CollectionEdit from "./CollectionEdit";
+import { collectionStorage } from "../../logic";
 
 afterEach(() => {
   cleanup();

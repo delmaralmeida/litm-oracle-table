@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 
 import { FormPage, useFormState } from "@/shared/components/FormPage";
-import { collectionStorage } from "@/features/collections";
 import { TablePicker } from "@/features/tables";
+import { collectionStorage } from "../../logic";
 import type { IFormFieldConfig } from "@/shared/components/FormPage";
 
 function CollectionCreate() {

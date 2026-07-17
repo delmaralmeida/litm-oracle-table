@@ -3,7 +3,7 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 
 import { PageHeader, ConfirmDeleteModal } from "@/shared/components";
 import { tableStorage } from "@/features/tables";
-import { collectionStorage } from "@/features/collections";
+import { collectionStorage } from "../../logic";
 
 function CollectionShow() {
   const { id } = useParams<{ id: string }>();
