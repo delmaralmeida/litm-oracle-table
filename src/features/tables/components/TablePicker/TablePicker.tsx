@@ -6,7 +6,7 @@ interface IProps {
   onChange: (ids: string[]) => void;
 }
 
-function TablePicker({ selectedIds, onChange }: IProps) {
+export default function TablePicker({ selectedIds, onChange }: IProps) {
   const tables = tableStorage.getAll();
 
   if (tables.length === 0) {
@@ -49,5 +49,3 @@ function TablePicker({ selectedIds, onChange }: IProps) {
     </div>
   );
 }
-
-export default TablePicker;
