@@ -4,7 +4,6 @@ import TableCreate from "./pages/TableCreate/TableCreate";
 import TableEdit from "./pages/TableEdit/TableEdit";
 import TablesRoller from "./pages/TablesRoller/TablesRoller";
 import TableSelector from "./components/TableSelector/TableSelector";
-import ResultsDisplay from "./components/ResultsDisplay/ResultsDisplay";
 import TableCard from "./components/TableCard/TableCard";
 import TablePicker from "./components/TablePicker/TablePicker";
 import findMatchingRow from "./logic/findMatchingRow";
@@ -19,7 +18,6 @@ export {
   TableEdit,
   TablesRoller,
   TableSelector,
-  ResultsDisplay,
   TableCard,
   TablePicker,
   findMatchingRow,

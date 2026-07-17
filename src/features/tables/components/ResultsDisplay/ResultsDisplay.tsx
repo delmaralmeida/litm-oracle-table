@@ -5,7 +5,7 @@ interface IProps {
   result: IResult | null;
 }
 
-function ResultsDisplay({ result }: IProps) {
+export default function ResultsDisplay({ result }: IProps) {
   if (!result) return null;
 
   const cols = Object.keys(result.row).filter((k) => k !== "roll");
@@ -29,5 +29,3 @@ function ResultsDisplay({ result }: IProps) {
     </div>
   );
 }
-
-export default ResultsDisplay;
