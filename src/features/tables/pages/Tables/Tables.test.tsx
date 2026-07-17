@@ -3,7 +3,7 @@ import { cleanup, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 
 import Tables from "./Tables";
-import { tableStorage } from "@/features/tables";
+import { tableStorage } from "../../logic";
 import { makeTable } from "@/features/tables/fixtures";
 
 afterEach(() => {

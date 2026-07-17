@@ -1,6 +1,6 @@
 import type { ITable, ITableForm } from "../types";
 
-function buildTable(
+export default function buildTable(
   id: string,
   fields: ITableForm,
 ): ITable {
@@ -23,5 +23,3 @@ function buildTable(
     rows: fields.rows,
   };
 }
-
-export default buildTable;

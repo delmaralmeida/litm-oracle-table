@@ -1,4 +1,4 @@
-import { tableStorage } from "@/features/tables";
+import { tableStorage } from "@/features/tables/logic";
 import "./TablePicker.css";
 
 interface IProps {

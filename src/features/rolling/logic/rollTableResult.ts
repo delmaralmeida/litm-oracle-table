@@ -1,4 +1,4 @@
-import { findMatchingRow } from "@/features/tables";
+import { findMatchingRow } from "@/features/tables/logic";
 import rollByType from "./rollByType";
 import type { ITable, ITableRow, IResult } from "@/features/tables/types";
 

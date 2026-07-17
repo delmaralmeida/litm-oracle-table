@@ -1,4 +1,5 @@
 import { describe, it, expect } from "vitest";
+
 import findMatchingRow from "./findMatchingRow";
 import type { ITableRow } from "../types";
 

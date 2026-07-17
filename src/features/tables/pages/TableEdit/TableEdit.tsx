@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 
 import { PageHeader } from "@/shared/components";
-import { tableStorage, buildTable } from "@/features/tables";
+import { tableStorage, buildTable } from "../../logic";
 import { TableForm } from "../../components";
 import type { ITableForm } from "../../types";
 

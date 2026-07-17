@@ -3,7 +3,7 @@ import { cleanup, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { renderWithRouter } from "@/shared/testing";
-import { tableStorage } from "@/features/tables";
+import { tableStorage } from "../../logic";
 import TableCreate from "./TableCreate";
 
 const newTableId = "00000000-0000-0000-0000-000000000001";

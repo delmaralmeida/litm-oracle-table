@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import * as tableModule from "@/features/tables";
+import * as tableModule from "@/features/tables/logic";
 import rollByType from "./rollByType";
 import rollTableResult from "./rollTableResult";
 import type { ITable, ITableRow } from "@/features/tables/types";

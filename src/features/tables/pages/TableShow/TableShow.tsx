@@ -3,7 +3,7 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 
 import { PageHeader, ConfirmDeleteModal } from "@/shared/components";
 import { collectionStorage } from "@/features/collections/logic";
-import { tableStorage } from "@/features/tables";
+import { tableStorage } from "../../logic";
 import "./TableShow.css";
 
 function TableShow() {

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import { tableStorage, buildTable } from "@/features/tables";
+import { tableStorage, buildTable } from "../../logic";
 import { TableForm } from "../../components";
 import type { ITableForm } from "../../types";
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 
 import { PageHeader, ConfirmDeleteModal } from "@/shared/components";
-import { tableStorage } from "@/features/tables";
+import { tableStorage } from "@/features/tables/logic";
 import { collectionStorage } from "../../logic";
 
 export default function CollectionShow() {

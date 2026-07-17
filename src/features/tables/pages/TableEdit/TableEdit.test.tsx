@@ -3,7 +3,7 @@ import { cleanup, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { renderWithRouter } from "@/shared/testing";
-import { tableStorage } from "@/features/tables";
+import { tableStorage } from "../../logic";
 import { makeTable } from "@/features/tables/fixtures";
 import TableEdit from "./TableEdit";
 
