@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import type { ITable } from "@/features/tables/types";
+import type { ITable } from "../../types";
 
-interface TableCardProps {
+interface ITableCardProps {
   table: ITable;
 }
 
-function TableCard({ table }: TableCardProps) {
+export default function TableCard({ table }: ITableCardProps) {
   return (
     <Link to={`/tables/${table.id}`} className="card clickable card-link">
       <h3 className="title">{table.name}</h3>
@@ -16,5 +16,3 @@ function TableCard({ table }: TableCardProps) {
     </Link>
   );
 }
-
-export default TableCard;
