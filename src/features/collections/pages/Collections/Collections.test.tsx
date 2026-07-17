@@ -3,8 +3,8 @@ import { cleanup, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 
 import Collections from "./Collections";
-import { makeCollection } from "@/features/collections/fixtures";
 import { collectionStorage } from "../../logic";
+import makeCollection from "../../fixtures";
 
 afterEach(() => {
   cleanup();

@@ -1,6 +1,6 @@
 import type { ICollection } from "./types";
 
-export function makeCollection(overrides: Partial<ICollection> = {}): ICollection {
+export default function makeCollection(overrides: Partial<ICollection> = {}): ICollection {
   return {
     id: "col-1",
     name: "Test Collection",
