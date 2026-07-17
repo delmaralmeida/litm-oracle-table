@@ -1,4 +1,4 @@
-import storageFactory from "@/shared/localStorage/storageFactory";
+import { storageFactory } from "@/shared/localStorage";
 import type { ICollection } from "../types";
 
 const storage = storageFactory<ICollection>("table-atlas:collections", "Collection");
