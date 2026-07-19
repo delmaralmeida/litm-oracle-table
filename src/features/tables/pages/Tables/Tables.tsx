@@ -1,8 +1,9 @@
 import { useState } from "react";
 
-import { ListPage } from "@/shared";
-import { TableCard, tableStorage } from "@/features/tables";
-import type { ITable } from "@/features/tables/types";
+import { ListPage } from "@/shared/components";
+import { tableStorage } from "../../logic";
+import { TableCard } from "../../components";
+import type { ITable } from "../../types";
 
 function Tables() {
   const [tables] = useState<ITable[]>(() => tableStorage.getAll());

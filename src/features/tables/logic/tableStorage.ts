@@ -1,6 +1,7 @@
-import { storageFactory } from "@/shared/localStorage/storageFactory";
+import { storageFactory } from "@/shared/localStorage";
+import { collectionStorage } from "@/features/collections/logic";
+import type { ICollection } from "@/features/collections/types";
 import type { ITable } from "../types";
-import collectionStorage from "@/features/collections/logic/collectionStorage";
 
 const base = storageFactory<ITable>("table-atlas:tables", "Table");
 
@@ -9,7 +10,7 @@ export default {
 
   remove(id: string): void {
     base.remove(id);
-    collectionStorage.getAll().forEach((collection) => {
+    collectionStorage.getAll().forEach((collection: ICollection) => {
       if (collection.tableIds.includes(id)) {
         collectionStorage.removeTableFromCollection(collection.id, id);
       }

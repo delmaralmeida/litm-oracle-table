@@ -3,7 +3,7 @@ import { cleanup, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import RowEditor from "./RowEditor";
-import type { ITableRow } from "@/features/tables/types";
+import type { ITableRow } from "../types";
 
 afterEach(() => {
   cleanup();

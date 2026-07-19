@@ -2,7 +2,7 @@ import { describe, expect, it, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import * as rollingModule from "@/features/rolling";
+import * as rollingModule from "../../logic";
 import RollCurrentTableButton from "./RollCurrentTableButton";
 import type { ITable, IResults } from "@/features/tables/types";
 

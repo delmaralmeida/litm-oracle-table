@@ -1,17 +1,17 @@
 import { useState } from "react";
 
-interface UseFormStateOptions<T extends Record<string, unknown>> {
+interface IUseFormStateOptions<T extends Record<string, unknown>> {
   initialFields: T;
   onSubmit: (fields: T) => void;
   validate?: (fields: T) => string | null;
 }
 
 /** Owns form field state, validation and submittion */
-export function useFormState<T extends Record<string, unknown>>({
+export default function useFormState<T extends Record<string, unknown>>({
   initialFields,
   onSubmit,
   validate,
-}: UseFormStateOptions<T>) {
+}: IUseFormStateOptions<T>) {
   const [fields, setFields] = useState(initialFields);
   const [error, setError] = useState<string | null>(null);
 

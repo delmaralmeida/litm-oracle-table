@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import type { ICollection } from "@/features/collections";
+import type { ICollection } from "../../types";
 
-interface CollectionCardProps {
+interface ICollectionCardProps {
   collection: ICollection;
 }
 
-function CollectionCard({ collection }: CollectionCardProps) {
+export default function CollectionCard({ collection }: ICollectionCardProps) {
   return (
     <Link to={`/collections/${collection.id}`} className="card clickable card-link">
       <h3 className="title">{collection.name}</h3>
@@ -18,5 +18,3 @@ function CollectionCard({ collection }: CollectionCardProps) {
     </Link>
   );
 }
-
-export default CollectionCard;

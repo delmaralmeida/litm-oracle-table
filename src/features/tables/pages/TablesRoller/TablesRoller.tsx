@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { tables } from "@/features/tables/data/tables";
-import { TableSelector, ResultsDisplay } from "@/features/tables";
-import { RollCurrentTableButton, RollAllTablesButton } from "@/features/rolling/";
+import { tables } from "../../data/tables";
+import { TableSelector, ResultsDisplay } from "../../components";
+import { RollCurrentTableButton, RollAllTablesButton } from "@/features/rolling/components";
 
-import type { IResult } from "@/features/tables/types";
+import type { IResult } from "../../types";
 import "./TablesRoller.css";
 
 function TablesRoller() {

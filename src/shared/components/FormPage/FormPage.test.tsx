@@ -2,16 +2,16 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { cleanup, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import { renderWithRouter } from "@/shared";
+import { renderWithRouter } from "../../testing";
 import FormPage from "./FormPage";
-import type { FormFieldConfig } from "./types";
+import type { IFormFieldConfig } from "./types";
 
 afterEach(() => {
   cleanup();
 });
 
 describe("FormPage", () => {
-  const defaultFields: FormFieldConfig[] = [
+  const defaultFields: IFormFieldConfig[] = [
     {
       name: "name",
       label: "Name",

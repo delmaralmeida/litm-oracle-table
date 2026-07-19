@@ -1,10 +1,10 @@
 import { render, screen, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import type { ITable, IResult } from "@/features/tables/types";
 
-import * as rollingModule from "@/features/rolling";
+import * as rollingModule from "../../logic";
 import RollAllTablesButton from "./RollAllTablesButton";
+import type { ITable, IResult } from "@/features/tables/types";
 
 afterEach(() => {
   cleanup();

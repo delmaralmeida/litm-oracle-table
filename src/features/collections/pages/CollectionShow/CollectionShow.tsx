@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 
-import { PageHeader, ConfirmDeleteModal } from "@/shared";
-import { tableStorage } from "@/features/tables";
-import { collectionStorage } from "@/features/collections";
+import { PageHeader, ConfirmDeleteModal } from "@/shared/components";
+import { tableStorage } from "@/features/tables/logic";
+import { collectionStorage } from "../../logic";
 
-function CollectionShow() {
+export default function CollectionShow() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -85,5 +85,3 @@ function CollectionShow() {
     </div>
   );
 }
-
-export default CollectionShow;

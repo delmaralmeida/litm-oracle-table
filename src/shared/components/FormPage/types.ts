@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 
-export type FormFieldType = "text" | "number" | "textarea" | "select" | "custom";
+type TFormFieldType = "text" | "number" | "textarea" | "select" | "custom";
 
-export interface FormFieldConfig {
+export interface IFormFieldConfig {
   name: string;
   label: string;
-  type: FormFieldType;
+  type: TFormFieldType;
   required?: boolean;
   placeholder?: string;
   rows?: number;
@@ -15,9 +15,9 @@ export interface FormFieldConfig {
   render?: (value: unknown, onChange: (v: unknown) => void) => ReactNode;
 }
 
-export interface FormPageProps {
+export interface IFormPageProps {
   title: string;
-  fields: FormFieldConfig[];
+  fields: IFormFieldConfig[];
   values: Record<string, unknown>;
   error: string | null;
   onFieldChange: (name: string, value: unknown) => void;

@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
-import { FormPage, useFormState } from "@/shared";
-import { collectionStorage } from "@/features/collections";
-import { TablePicker } from "@/features/tables";
-import type { FormFieldConfig } from "@/shared";
+import { FormPage, useFormState } from "@/shared/components/FormPage";
+import { TablePicker } from "@/features/tables/components";
+import { collectionStorage } from "../../logic";
+import type { IFormFieldConfig } from "@/shared/components/FormPage";
 
-function CollectionCreate() {
+export default function CollectionCreate() {
   const navigate = useNavigate();
 
   const { fields, error, handleFieldChange, handleSubmit } = useFormState({
@@ -31,7 +31,7 @@ function CollectionCreate() {
     },
   });
 
-  const formFields: FormFieldConfig[] = [
+  const formFields: IFormFieldConfig[] = [
     {
       name: "name",
       label: "Name",
@@ -77,5 +77,3 @@ function CollectionCreate() {
     />
   );
 }
-
-export default CollectionCreate;

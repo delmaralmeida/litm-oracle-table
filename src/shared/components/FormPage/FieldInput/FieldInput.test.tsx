@@ -3,7 +3,7 @@ import { cleanup, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import FieldInput from "./FieldInput";
-import type { FormFieldConfig } from "./types";
+import type { IFormFieldConfig } from "../types";
 
 afterEach(() => {
   cleanup();
@@ -13,7 +13,7 @@ describe("FieldInput", () => {
   it("renders textarea, default attributes, and calls onChange", async () => {
     const user = userEvent.setup();
     const onChange = vi.fn();
-    const field: FormFieldConfig = {
+    const field: IFormFieldConfig = {
       name: "bio",
       label: "Biography",
       type: "textarea",
@@ -39,7 +39,7 @@ describe("FieldInput", () => {
   });
 
   it("renders select with options", () => {
-    const field: FormFieldConfig = {
+    const field: IFormFieldConfig = {
       name: "role",
       label: "Role",
       type: "select",
@@ -65,7 +65,7 @@ describe("FieldInput", () => {
   });
 
   it("renders number input with min limit", () => {
-    const field: FormFieldConfig = {
+    const field: IFormFieldConfig = {
       name: "age",
       label: "Age",
       type: "number",
@@ -89,7 +89,7 @@ describe("FieldInput", () => {
   });
 
   it("renders text input", () => {
-    const field: FormFieldConfig = {
+    const field: IFormFieldConfig = {
       name: "username",
       label: "Username",
       type: "text",

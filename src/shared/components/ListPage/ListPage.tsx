@@ -1,7 +1,8 @@
+// TODO: remove PageHeader component, this should be used inside parent componet.
 import PageHeader from "../PageHeader/PageHeader";
 import type { ReactNode } from "react";
 
-interface ListPageProps<T> {
+interface IListPageProps<T> {
   title: string;
   items: T[];
   newItemLabel: string;
@@ -17,7 +18,7 @@ export default function ListPage<T extends { id: string }>({
   newItemUrl,
   emptyStateMessage,
   renderCard,
-}: ListPageProps<T>) {
+}: IListPageProps<T>) {
   return (
     <div className="space-y-8">
       <PageHeader title={title} action={{ label: newItemLabel, to: newItemUrl }} />

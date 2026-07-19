@@ -1,4 +1,4 @@
-import type { TDiceType } from "@/features/tables";
+import type { TDiceType } from "@/features/tables/types";
 
 /** Roll a single die with N sides. */
 function rollDie(sides: number): number {

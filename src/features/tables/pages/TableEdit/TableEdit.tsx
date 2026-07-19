@@ -1,10 +1,11 @@
 import { useNavigate, useParams } from "react-router-dom";
 
-import { PageHeader } from "@/shared";
-import { TableForm, tableStorage, buildTable } from "@/features/tables";
-import type { ITableForm } from "@/features/tables/types";
+import { PageHeader } from "@/shared/components";
+import { tableStorage, buildTable } from "../../logic";
+import { TableForm } from "../../components";
+import type { ITableForm } from "../../types";
 
-function TableEdit() {
+export default function TableEdit() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const table = id ? tableStorage.getById(id) : undefined;
@@ -44,5 +45,3 @@ function TableEdit() {
     />
   );
 }
-
-export default TableEdit;

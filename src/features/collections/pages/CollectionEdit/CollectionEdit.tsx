@@ -1,10 +1,11 @@
 import { useNavigate, useParams } from "react-router-dom";
 
-import { FormPage, useFormState, PageHeader } from "@/shared";
-import { collectionStorage } from "@/features/collections";
-import type { FormFieldConfig } from "@/shared";
+import { FormPage, useFormState } from "@/shared/components/FormPage";
+import { PageHeader } from "@/shared/components";
+import { collectionStorage } from "../../logic";
+import type { IFormFieldConfig } from "@/shared/components/FormPage";
 
-function CollectionEdit() {
+export default function CollectionEdit() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const collection = id ? collectionStorage.getById(id) : undefined;
@@ -41,7 +42,7 @@ function CollectionEdit() {
     );
   }
 
-  const formFields: FormFieldConfig[] = [
+  const formFields: IFormFieldConfig[] = [
     {
       name: "name",
       label: "Name",
@@ -75,5 +76,3 @@ function CollectionEdit() {
     />
   );
 }
-
-export default CollectionEdit;

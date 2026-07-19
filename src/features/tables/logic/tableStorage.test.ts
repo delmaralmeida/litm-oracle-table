@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
 
-import { runCrudStorageTests } from "@/shared/localStorage/runCrudStorageTests";
-import collectionStorage from "@/features/collections/logic/collectionStorage";
+import { runCrudStorageTests } from "@/shared/localStorage";
+import { collectionStorage } from "@/features/collections/logic";
 import tableStorage from "./tableStorage";
 import { makeTable } from "../fixtures";
 

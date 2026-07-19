@@ -2,9 +2,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 
+import { tableStorage } from "../../logic";
+import { makeTable } from "../../fixtures";
 import Tables from "./Tables";
-import { tableStorage } from "@/features/tables";
-import { makeTable } from "@/features/tables/fixtures";
 
 afterEach(() => {
   cleanup();

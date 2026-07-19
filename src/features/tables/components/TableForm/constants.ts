@@ -1,9 +1,9 @@
-import type { FormFieldConfig } from "@/shared/components/FormPage/types";
+import type { IFormFieldConfig } from "@/shared/components/FormPage/types";
 import type { TDiceType } from "../../types";
 
 const DICE_TYPES: TDiceType[] = ["basic", "percentile", "digit"];
 
-export const TABLE_FORM_FIELDS: FormFieldConfig[] = [
+export const TABLE_FORM_FIELDS: IFormFieldConfig[] = [
   {
     name: "name",
     label: "Name",

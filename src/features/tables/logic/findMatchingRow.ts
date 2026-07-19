@@ -34,7 +34,7 @@ function matchStringRoll(rollString: string, roll: number): boolean {
  * @examples
  * 4, 66, "5", "1-3", etc.
  */
-function findMatchingRow(
+export default function findMatchingRow(
   rows: ITableRow[],
   roll: number,
 ): ITableRow | undefined {
@@ -51,5 +51,3 @@ function findMatchingRow(
     return false;
   });
 }
-
-export default findMatchingRow;

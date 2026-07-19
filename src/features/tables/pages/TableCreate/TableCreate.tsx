@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
-import { TableForm, tableStorage, buildTable } from "@/features/tables";
-import type { ITableForm } from "@/features/tables/types";
+import { tableStorage, buildTable } from "../../logic";
+import { TableForm } from "../../components";
+import type { ITableForm } from "../../types";
 
-function TableCreate() {
+export default function TableCreate() {
   const navigate = useNavigate();
   const onSubmit = (fields: ITableForm) => {
     const table = buildTable(crypto.randomUUID(), fields);
@@ -31,5 +32,3 @@ function TableCreate() {
     />
   );
 }
-
-export default TableCreate;

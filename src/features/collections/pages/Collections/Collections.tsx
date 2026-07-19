@@ -1,10 +1,11 @@
 import { useState } from "react";
 
-import { ListPage } from "@/shared";
-import { collectionStorage, CollectionCard } from "@/features/collections";
-import type { ICollection } from "@/features/collections";
+import { ListPage } from "@/shared/components";
+import { CollectionCard } from "../../components";
+import { collectionStorage } from "../../logic";
+import type { ICollection } from "../../types";
 
-function Collections() {
+export default function Collections() {
   const [collections] = useState<ICollection[]>(() => collectionStorage.getAll());
 
   return (
@@ -18,5 +19,3 @@ function Collections() {
     />
   );
 }
-
-export default Collections;

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./PageHeader.css";
 
-interface PageHeaderProps {
+interface IPageHeaderProps {
   title: string;
   backTo?: string;
   backLabel?: string;
@@ -11,7 +11,7 @@ interface PageHeaderProps {
   };
 }
 
-function PageHeader({ title, backTo, backLabel = "Back", action }: PageHeaderProps) {
+export default function PageHeader({ title, backTo, backLabel = "Back", action }: IPageHeaderProps) {
   return (
     <div className="page-header">
       <div className="page-header-top">
@@ -30,5 +30,3 @@ function PageHeader({ title, backTo, backLabel = "Back", action }: PageHeaderPro
     </div>
   );
 }
-
-export default PageHeader;

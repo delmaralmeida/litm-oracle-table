@@ -1,0 +1,36 @@
+@reference "tailwindcss";
+
+@layer components {
+  .header-cell-content {
+    @apply flex items-center justify-between gap-2;
+
+    .header-input {
+      @apply
+        bg-transparent font-semibold text-slate-600 border border-transparent outline-none w-full px-1 py-0.5
+        focus:bg-white focus:border-blue-400 focus:ring-1 focus:ring-blue-300 rounded transition-all;
+    }
+
+    .remove-col-btn {
+      @apply opacity-0 group-hover:opacity-100 transition-opacity focus:opacity-100;
+    }
+  }
+
+  th:hover .remove-col-btn {
+    @apply opacity-100;
+  }
+
+  .table-input {
+    @apply
+      w-full
+      h-full
+      px-4 py-2.5
+      bg-transparent
+      text-slate-700
+      text-sm
+      border-none
+      outline-none
+      transition-colors duration-150
+      focus:bg-white focus:ring-1 focus:ring-blue-300
+    ;
+  }
+}

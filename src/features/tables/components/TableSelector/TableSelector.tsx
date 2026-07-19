@@ -7,7 +7,7 @@ interface IProps {
   onSelect: (index: number) => void;
 }
 
-function TableSelector({
+export default function TableSelector({
   tables,
   currentIndex,
   onSelect,
@@ -30,5 +30,3 @@ function TableSelector({
     </>
   );
 }
-
-export default TableSelector;

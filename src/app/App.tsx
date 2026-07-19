@@ -1,5 +1,5 @@
 import { HashRouter } from "react-router-dom";
-import { Navbar } from "@/shared";
+import { Navbar } from "@/shared/components";
 import AppRouter from "./AppRouter";
 
 function App() {

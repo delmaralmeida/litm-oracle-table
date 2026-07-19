@@ -2,9 +2,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { cleanup, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import { renderWithRouter } from "@/shared/test/renderWithRouter";
-import { collectionStorage } from "@/features/collections";
-import { makeCollection } from "@/features/collections/fixtures";
+import { renderWithRouter } from "@/shared/testing";
+import { collectionStorage } from "../../logic";
+import makeCollection from "../../fixtures";
 import CollectionEdit from "./CollectionEdit";
 
 afterEach(() => {

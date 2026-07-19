@@ -1,7 +1,7 @@
-import type { FormFieldConfig } from "./types";
+import type { IFormFieldConfig } from "../types";
 
-interface FieldInputProps {
-  field: FormFieldConfig;
+interface IFieldInputProps {
+  field: IFormFieldConfig;
   value: unknown;
   onChange: (value: unknown) => void;
 }
@@ -10,7 +10,7 @@ export default function FieldInput({
   field,
   value,
   onChange,
-}: FieldInputProps) {
+}: IFieldInputProps) {
   const id = field.htmlFor || field.name;
 
   switch (field.type) {

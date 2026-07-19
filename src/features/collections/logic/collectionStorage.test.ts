@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeEach } from "vitest";
 
-import { runCrudStorageTests } from "@/shared/localStorage/runCrudStorageTests";
+import { runCrudStorageTests } from "@/shared/localStorage";
 import collectionStorage from "./collectionStorage";
-import { makeCollection } from "../fixtures";
+import makeCollection from "../fixtures";
 
 describe("collectionStorage", () => {
   beforeEach(() => {

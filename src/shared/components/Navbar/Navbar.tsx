@@ -4,7 +4,7 @@ import "./Navbar.css";
 const getNavLinkClass = ({ isActive }: { isActive: boolean }) =>
   `nav-link ${isActive ? "active" : ""}`;
 
-function Navbar() {
+export default function Navbar() {
   return (
     <nav id="navbar">
       <div className="container">
@@ -29,5 +29,3 @@ function Navbar() {
     </nav>
   );
 }
-
-export default Navbar;

@@ -2,9 +2,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 
+import { collectionStorage } from "../../logic";
+import makeCollection from "../../fixtures";
 import Collections from "./Collections";
-import { collectionStorage } from "@/features/collections";
-import { makeCollection } from "@/features/collections/fixtures";
 
 afterEach(() => {
   cleanup();

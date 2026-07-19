@@ -2,9 +2,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { cleanup, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import { renderWithRouter } from "@/shared/test/renderWithRouter";
-import { tableStorage } from "@/features/tables";
-import { makeTable } from "@/features/tables/fixtures";
+import { renderWithRouter } from "@/shared/testing";
+import { tableStorage } from "../../logic";
+import { makeTable } from "../../fixtures";
 import TableEdit from "./TableEdit";
 
 afterEach(() => {

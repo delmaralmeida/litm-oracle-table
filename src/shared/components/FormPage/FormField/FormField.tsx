@@ -1,13 +1,13 @@
 import "./FormField.css";
 
-interface FormFieldProps {
+interface IFormFieldProps {
   label: string;
   htmlFor: string;
   required?: boolean;
   children: React.ReactNode;
 }
 
-function FormField({ label, htmlFor, required, children }: FormFieldProps) {
+export default function FormField({ label, htmlFor, required, children }: IFormFieldProps) {
   return (
     <div className="form-field">
       <label htmlFor={htmlFor} className="form-label">
@@ -18,5 +18,3 @@ function FormField({ label, htmlFor, required, children }: FormFieldProps) {
     </div>
   );
 }
-
-export default FormField;

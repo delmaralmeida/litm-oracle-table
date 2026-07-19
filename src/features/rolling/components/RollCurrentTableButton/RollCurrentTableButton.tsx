@@ -1,12 +1,12 @@
+import { rollTableResult } from "../../logic";
 import type { ITable, IResults } from "@/features/tables/types";
-import { rollTableResult } from "@/features/rolling";
 
 interface IProps {
   currentTable: ITable;
   setResults: (results: IResults | ((prev: IResults) => IResults)) => void;
 }
 
-function RollCurrentTableButton({
+export default function RollCurrentTableButton({
   currentTable,
   setResults,
 }: IProps) {
@@ -23,5 +23,3 @@ function RollCurrentTableButton({
     </button>
   );
 }
-
-export default RollCurrentTableButton;
